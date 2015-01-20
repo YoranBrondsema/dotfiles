@@ -1,5 +1,5 @@
 execute pathogen#infect()
-set nocompatible
+set nocompatible " We're running Vim, not Vi!
 set encoding=utf8
 set showcmd
 syntax on
@@ -23,4 +23,3 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 colorscheme wombat
-

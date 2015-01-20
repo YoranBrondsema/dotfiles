@@ -1,2 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/yoran/Projects/hstry-education/db/seeds'
+let g:netrw_dirhist_2='/home/yoran/Projects/hstry-education/app/assets/javascripts/templates/timeline_bundle/purchase'
+let g:netrw_dirhist_3='/home/yoran/Projects/hstry-education/app/assets/javascripts/templates/modal'
+let g:netrw_dirhist_4='/home/yoran/Projects/hstry-education/app/mailer_previews'
+let g:netrw_dirhist_5='/home/yoran/Projects/hstry-education/db/seeds/facts-and-myths'
+let g:netrw_dirhist_6='/home/yoran/Projects/active_model_serializers/.git'
+let g:netrw_dirhist_7='/home/yoran/Projects/hstry-education/app/views'
+let g:netrw_dirhist_8='/home/yoran/Projects/hstry-education/spec/javascripts/factories'
