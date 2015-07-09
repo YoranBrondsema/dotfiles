@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/yoran/.vim'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/yoran/Projects/myweddingstory/frontend/app/routes/app'
+let g:netrw_dirhist_2='/home/yoran/Projects/myweddingstory/frontend/app/templates/app/go-premium'
+let g:netrw_dirhist_3='/home/yoran/Projects/hstry-education/frontend/app/initializers'
