@@ -4,9 +4,12 @@ set encoding=utf8
 set showcmd
 syntax on
 filetype on
-filetype indent on 
+filetype indent on
 filetype plugin on
 compiler ruby
+
+" Autocomplete
+set omnifunc=syntaxcomplete#Complete
 
 " Whitespace
 set wrap
