@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/yoran/Projects/myweddingstory/frontend/app/routes/app'
-let g:netrw_dirhist_2='/home/yoran/Projects/myweddingstory/frontend/app/templates/app/go-premium'
-let g:netrw_dirhist_3='/home/yoran/Projects/hstry-education/frontend/app/initializers'
-let g:netrw_dirhist_4='/home/yoran/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/json'
