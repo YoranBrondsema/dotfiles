@@ -3,7 +3,7 @@ set nocompatible " We're running Vim, not Vi!
 set encoding=utf8
 set showcmd
 filetype on
-filetype indent on
+filetype indent on " load filetype-specific indent files
 filetype plugin on
 compiler ruby
 
@@ -15,9 +15,14 @@ set tabstop=2 " number of visual spaces per TAB
 set softtabstop=2 " number of spaces in tab when editing
 set expandtab " tabs are spaces
 set shiftwidth=2
-" set wrap
-" set autoindent
+set wrap
+set autoindent
 " set backspace=indent,eol,start  " backspace through everything in insert mode
+
+" UI
+set cursorline " highlight current line
+set wildmenu " visual autocomplete for command menu
+set showmatch " highlight matching [{()}]
 
 " Searching
 set hlsearch                    " highlight matches
