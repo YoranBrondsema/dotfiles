@@ -17,7 +17,6 @@ set expandtab " tabs are spaces
 set shiftwidth=2
 set wrap
 set autoindent
-" set backspace=indent,eol,start  " backspace through everything in insert mode
 
 " UI
 set cursorline " highlight current line
