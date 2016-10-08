@@ -3,3 +3,5 @@
 	excludesfile = /home/yoran/.gitignore_global
 [user]
 	name = Yoran Brondsema
+[credential]
+	helper = cache --timeout=3600
