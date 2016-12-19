@@ -32,8 +32,8 @@ set smartcase                   " ... unless they contain at least one capital l
 colorscheme wombat256i
 syntax on " enable syntax processing
 
-""
-"" Backup and swap files
-""
+"
+" Backup and swap files
+"
 set backupdir=~/.vim/_backup//    " where to put backup files.
-set directory=~/.vim/_temp//      " where to put swap files.
+set directory=~/.vim/_tmp//      " where to put swap files.
