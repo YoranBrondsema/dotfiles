@@ -37,3 +37,12 @@ syntax on " enable syntax processing
 "
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_tmp//      " where to put swap files.
+
+" show the filename in the window titlebar
+set title
+
+" don’t reset cursor to start of line when moving around
+set nostartofline
+
+" show the (partial) command as it’s being typed
+set showcmd
