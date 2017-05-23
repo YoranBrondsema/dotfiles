@@ -46,3 +46,6 @@ set nostartofline
 
 " show the (partial) command as it’s being typed
 set showcmd
+
+" 80-character line marker
+set colorcolumn=80
