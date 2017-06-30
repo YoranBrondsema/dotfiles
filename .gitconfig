@@ -6,9 +6,4 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
-  # Get the current branch name (not so useful in itself, but used in
-  # other aliases)
-  branch-name = "!git rev-parse --abbrev-ref HEAD"
-  # Push the current branch to the remote "origin", and set it to track
-  # the upstream branch
-  publish = "!git push -u origin $(git branch-name)"
+  poh = "push origin HEAD"
