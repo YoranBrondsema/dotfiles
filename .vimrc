@@ -49,3 +49,8 @@ set showcmd
 
 " 80-character line marker
 set colorcolumn=80
+
+" Key bindings for RSpec focus
+" (https://github.com/unifieddialog/vim-rspec-focus)
+nnoremap <leader>F :AddFocusTag<CR>
+nnoremap <leader>f :RemoveAllFocusTags<CR>
