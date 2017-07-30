@@ -10,3 +10,4 @@
   plom = "pull origin master"
   mm = "merge master"
   cm = "checkout master"
+  ca = "commit --amend"
