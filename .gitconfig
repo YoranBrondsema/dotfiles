@@ -3,6 +3,7 @@
 	excludesfile = /home/yoran/.gitignore_global
 [user]
 	name = Yoran Brondsema
+	email = yoran@sutori.com
 [credential]
 	helper = cache --timeout=3600
 [alias]
