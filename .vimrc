@@ -19,7 +19,6 @@ set wrap
 set autoindent
 
 " UI
-set cursorline " highlight current line
 set wildmenu " visual autocomplete for command menu
 set showmatch " highlight matching [{()}]
 
@@ -54,3 +53,6 @@ set colorcolumn=80
 " (https://github.com/unifieddialog/vim-rspec-focus)
 nnoremap <leader>f :AddFocusTag<CR>
 nnoremap <leader>F :RemoveAllFocusTags<CR>
+
+" To delete without cutting.
+nnoremap <leader>d "_d
