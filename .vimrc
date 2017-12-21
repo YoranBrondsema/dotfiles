@@ -49,8 +49,7 @@ set showcmd
 " 80-character line marker
 set colorcolumn=80
 
-" show current column and row
-set cursorcolumn
+" show current row
 set cursorline
 
 " Key bindings for RSpec focus
