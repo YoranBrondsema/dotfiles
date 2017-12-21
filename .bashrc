@@ -130,3 +130,9 @@ export EDITOR='vim'
 
 # Rubocop alias
 alias rc='rubocop --auto-correct'
+
+# Hugo static site generator
+export PATH="$PATH:$HOME/Programs/hugo" # Add RVM to PATH for scripting
+# Directory for Go programs (see https://stackoverflow.com/a/20629533/1269194)
+export GOPATH="$HOME/Programs/go"
+export PATH="$PATH:$HOME/Programs/go/src/github.com/mindok/hugodeploy"
