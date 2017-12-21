@@ -49,6 +49,10 @@ set showcmd
 " 80-character line marker
 set colorcolumn=80
 
+" show current column and row
+set cursorcolumn
+set cursorline
+
 " Key bindings for RSpec focus
 " (https://github.com/unifieddialog/vim-rspec-focus)
 nnoremap <leader>f :AddFocusTag<CR>
@@ -56,3 +60,6 @@ nnoremap <leader>F :RemoveAllFocusTags<CR>
 
 " To delete without cutting.
 nnoremap <leader>d "_d
+
+" Wrap to 80 columns for Markdown files
+au BufRead,BufNewFile *.md setlocal textwidth=80
