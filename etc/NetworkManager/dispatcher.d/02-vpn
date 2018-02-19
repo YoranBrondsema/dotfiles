@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This connects to the 'streisand' VPN after we connected to a network (from
+# https://askubuntu.com/a/904652/796747).
+
+VPN_CONNECTION_NAME="streisand"
+
+if [ "$2" = "up" ]; then
+  sleep "3s"
+  nmcli con up id "${VPN_CONNECTION_NAME}"
+fi
