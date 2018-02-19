@@ -136,3 +136,6 @@ export PATH="$PATH:$HOME/Programs/hugo" # Add RVM to PATH for scripting
 # Directory for Go programs (see https://stackoverflow.com/a/20629533/1269194)
 export GOPATH="$HOME/Programs/go"
 export PATH="$PATH:$HOME/Programs/go/src/github.com/mindok/hugodeploy"
+
+# For AWS installed through pip (see https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux.html)
+export PATH=~/.local/bin:$PATH
