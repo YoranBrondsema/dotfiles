@@ -139,3 +139,5 @@ export PATH="$PATH:$HOME/Programs/go/src/github.com/mindok/hugodeploy"
 
 # For AWS installed through pip (see https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux.html)
 export PATH=~/.local/bin:$PATH
+
+export PATH="$PATH:$HOME/Programs"
