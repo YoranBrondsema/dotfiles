@@ -1,11 +1,13 @@
 [core]
 	editor = vim
 	excludesfile = /home/yoran/.gitignore_global
+
 [user]
 	name = Yoran Brondsema
-	email = yoran@sutori.com
+
 [credential]
 	helper = cache --timeout=3600
+
 [alias]
   poh = "push origin HEAD"
   plom = "pull origin master"
@@ -13,6 +15,8 @@
   cm = "checkout master"
   ca = "commit --amend"
   last = "log -n 1" # display last commit
+  st = "status"
+  aa = "add --all"
   # From http://rwjblue.com/2017/05/05/common-git-aliases/
   list-branches = "branch --sort=-committerdate"
   delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
