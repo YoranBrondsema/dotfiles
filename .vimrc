@@ -62,3 +62,8 @@ nnoremap <leader>d "_d
 
 " Wrap to 80 columns for Markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Javascript mappings
+nnoremap <leader>c' iconsole.log('');<ESC><Left><Left>i
+nnoremap <leader>c` iconsole.log(``);<ESC><Left><Left>i
+nnoremap <leader>d idebugger;<ESC>o
