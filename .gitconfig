@@ -10,6 +10,7 @@
 
 [alias]
   poh = "push origin HEAD"
+  pohf = "push origin HEAD --force-with-lease"
   plom = "pull origin master"
   mm = "merge master"
   cm = "checkout master"
@@ -20,3 +21,5 @@
   # From http://rwjblue.com/2017/05/05/common-git-aliases/
   list-branches = "branch --sort=-committerdate"
   delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
+[gpg]
+	program = gpg2
