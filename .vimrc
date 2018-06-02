@@ -64,6 +64,6 @@ nnoremap <leader>d "_d
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Javascript mappings
-nnoremap <leader>c' iconsole.log('');<ESC><Left><Left>i
-nnoremap <leader>c` iconsole.log(``);<ESC><Left><Left>i
-nnoremap <leader>d idebugger;<ESC>o
+inoremap <leader>c' console.log('');<ESC><Left><Left>i
+inoremap <leader>c` console.log(``);<ESC><Left><Left>i
+inoremap <leader>b debugger;<ESC>o
