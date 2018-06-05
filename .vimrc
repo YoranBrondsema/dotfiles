@@ -67,3 +67,8 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 inoremap <leader>c' console.log('');<ESC><Left><Left>i
 inoremap <leader>c` console.log(``);<ESC><Left><Left>i
 inoremap <leader>b debugger;<ESC>o
+
+" Type "%%/" path to quickly edit a file in the same directory as the current
+" file (from
+" http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory#Using_a_command_line_abbreviation)
+cabbr <expr> %% expand('%:p:h')
