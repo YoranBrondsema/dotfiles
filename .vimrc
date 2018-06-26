@@ -63,12 +63,13 @@ nnoremap <leader>d "_d
 " Wrap to 80 columns for Markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
-" Javascript mappings
-inoremap <leader>c' console.log('');<ESC><Left><Left>i
-inoremap <leader>c` console.log(``);<ESC><Left><Left>i
-inoremap <leader>b debugger;<ESC>o
-
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory#Using_a_command_line_abbreviation)
 cabbr <expr> %% expand('%:p:h')
+
+" Ember.js
+" opens the component.js file
+nnoremap <leader>pc :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.js<CR>
+" opens the template.hbs file
+nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
