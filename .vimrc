@@ -28,8 +28,17 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+" Theme
+" The following is necessary to have termguicolors work in the terminal (see
+" https://github.com/vim/vim/issues/993#issuecomment-255651605)
+" set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if (has("termguicolors"))
+ set termguicolors
+endif
+syntax on
 colorscheme wombat256i
-syntax on " enable syntax processing
 
 "
 " Backup and swap files
