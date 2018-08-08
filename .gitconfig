@@ -1,13 +1,10 @@
 [core]
 	editor = vim
 	excludesfile = /home/yoran/.gitignore_global
-
 [user]
 	name = Yoran Brondsema
-
 [credential]
 	helper = cache --timeout=3600
-
 [alias]
   poh = "push origin HEAD"
   pohf = "push origin HEAD --force-with-lease"
@@ -23,3 +20,5 @@
   delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
 [gpg]
 	program = gpg2
+[push]
+  followTags = true
