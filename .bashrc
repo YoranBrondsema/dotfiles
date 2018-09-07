@@ -116,10 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
-export NVM_DIR="/home/yoran/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Remove hostname from terminal (see http://askubuntu.com/a/338505)
@@ -128,16 +129,8 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;3
 # For tmuxinator (https://github.com/tmuxinator/tmuxinator#editor-and-shell)
 export EDITOR='vim'
 
-# Rubocop alias
-alias rc='rubocop --auto-correct'
-
-# Hugo static site generator
-export PATH="$PATH:$HOME/Programs/hugo" # Add RVM to PATH for scripting
-# Directory for Go programs (see https://stackoverflow.com/a/20629533/1269194)
-export GOPATH="$HOME/Programs/go"
-export PATH="$PATH:$HOME/Programs/go/src/github.com/mindok/hugodeploy"
-
-# For AWS installed through pip (see https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux.html)
-export PATH=~/.local/bin:$PATH
-
+# Binaries in /home/yoran/Programs
 export PATH="$PATH:$HOME/Programs"
+
+# Aliases
+alias rc='rubocop --auto-correct'
