@@ -55,8 +55,8 @@ set nostartofline
 " show the (partial) command as it’s being typed
 set showcmd
 
-" 80-character line marker
-set colorcolumn=80
+" 120-character line marker
+set colorcolumn=120
 
 " show current row
 set cursorline
@@ -69,8 +69,8 @@ nnoremap <leader>F :RemoveAllFocusTags<CR>
 " To delete without cutting.
 nnoremap <leader>d "_d
 
-" Wrap to 80 columns for Markdown files
-au BufRead,BufNewFile *.md setlocal textwidth=80
+" Wrap to 120 columns for Markdown files
+au BufRead,BufNewFile *.md setlocal textwidth=120
 
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
