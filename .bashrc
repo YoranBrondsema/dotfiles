@@ -134,3 +134,4 @@ export PATH="$PATH:$HOME/Programs"
 
 # Aliases
 alias rc='rubocop --auto-correct'
+alias hgrep='history | grep '
