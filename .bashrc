@@ -133,5 +133,5 @@ export EDITOR='vim'
 export PATH="$PATH:$HOME/Programs"
 
 # Aliases
-alias rc='rubocop --auto-correct'
+alias rc='rubocop'
 alias hgrep='history | grep '
