@@ -82,3 +82,7 @@ cabbr <expr> %% expand('%:p:h')
 nnoremap <leader>pc :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.js<CR>
 " opens the template.hbs file
 nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
+
+" By default, it's <Leader>p but it conflicts with the Ember.js commands
+" above.
+nmap <Leader>r <Plug>(Prettier)
