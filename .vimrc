@@ -84,4 +84,6 @@ nnoremap <leader>pc :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.js<CR>
 nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 
 " Fixing lints with ale
-nmap <Leader>f <Plug>(ale_fix)
+nmap <Leader>l <Plug>(ale_fix)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
