@@ -11,7 +11,7 @@
   plom = "pull origin master"
   mm = "merge master"
   cm = "checkout master"
-  ca = "commit --amend"
+  ca = "commit --amend --no-edit"
   last = "log -n 1" # display last commit
   st = "status"
   aa = "add --all"
