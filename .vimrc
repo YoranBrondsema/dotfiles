@@ -61,6 +61,9 @@ set colorcolumn=80
 " show current row
 set cursorline
 
+" <leader>  is Space bar
+let mapleader = "\<Space>"
+
 " Key bindings for RSpec focus
 " (https://github.com/unifieddialog/vim-rspec-focus)
 nnoremap <leader>f :AddFocusTag<CR>
@@ -84,6 +87,9 @@ nnoremap <leader>pc :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.js<CR>
 nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 
 " Fixing lints with ale
-nmap <Leader>l <Plug>(ale_fix)
+nmap <leader>l <Plug>(ale_fix)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Yank name of current file
+nmap <leader>cs :let @"=expand("%:t")<CR>
