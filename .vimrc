@@ -97,3 +97,7 @@ nmap <leader>cs :let @"=expand("%:t")<CR>
 " Run angle-brackets codemod on current file. Requires "yarn
 " codemod:angle-brackets" script to be existent in the project.
 nnoremap <leader>ca :execute "!yarn codemod:angle-brackets " . expand('%:p')<CR>
+
+" Press <Ctrl>-j to insert a new line below the cursor without leaving normal
+" mode.
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
