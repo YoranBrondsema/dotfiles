@@ -100,4 +100,7 @@ nnoremap <leader>ca :execute "!yarn codemod:angle-brackets " . expand('%:p')<CR>
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Easily replace the word under the cursor.
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" Highlight YAML front matter as used by Jekyll or Hugo.
+let g:vim_markdown_frontmatter = 1
