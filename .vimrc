@@ -72,9 +72,6 @@ nnoremap <leader>F :RemoveAllFocusTags<CR>
 " To delete without cutting.
 nnoremap <leader>d "_d
 
-" Wrap to 80 columns for Markdown files
-au BufRead,BufNewFile *.md setlocal textwidth=80
-
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory#Using_a_command_line_abbreviation)
