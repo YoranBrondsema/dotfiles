@@ -85,8 +85,8 @@ nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 
 " Fixing lints with ale
 nmap <leader>l <Plug>(ale_fix)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader>j <Plug>(ale_next_wrap)
 
 " Yank name of current file
 nmap <leader>cs :let @"=expand("%:t")<CR>
