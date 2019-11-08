@@ -136,3 +136,21 @@ export PATH="$PATH:$HOME/Programs"
 alias rc='rubocop --safe-auto-correct'
 alias hgrep='history | grep'
 alias angle-brackets='npx ember-angle-brackets-codemod angle-brackets'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/yoran/Programs/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/yoran/Programs/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/yoran/Programs/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/yoran/Programs/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+# Terraform
+export PATH="$PATH:$HOME/Programs/terraform_0.12.13"
