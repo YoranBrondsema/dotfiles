@@ -154,3 +154,14 @@ alias angle-brackets='npx ember-angle-brackets-codemod angle-brackets'
 
 # Terraform
 export PATH="$PATH:$HOME/Programs/terraform_0.12.13"
+
+# Android Studio
+export ANDROID_SDK_ROOT="/home/yoran/Android/Sdk"
+# adb (to debug on hardware device over USB)
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+
+# Oracle JDK 8 (needed for corber)
+export PATH="$PATH:$HOME/Programs/jdk1.8.0_231/bin"
+
+# fzf
+export PATH="$PATH:$HOME/Programs/fzf"
