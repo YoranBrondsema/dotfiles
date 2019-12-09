@@ -164,4 +164,14 @@ export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export PATH="$PATH:$HOME/Programs/jdk1.8.0_231/bin"
 
 # fzf
-export PATH="$PATH:$HOME/Programs/fzf"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Google Cloud SQL Proxy
+export PATH="$PATH:$HOME/Programs/cloud_sql_proxy"
+
+# puma-dev (https://github.com/puma/puma-dev), for using HTTPS in localhost (see https://www.balinterdi.com/blog/developing-an-ember-js-app-on-https/)
+export PATH="$PATH:$HOME/Programs/puma-dev"
+
+# asdf (to manage Elixir runtimes)
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

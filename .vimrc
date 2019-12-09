@@ -100,7 +100,14 @@ nnoremap <leader>ca :execute "!yarn codemod:angle-brackets " . expand('%:p')<CR>
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Easily replace the word under the cursor.
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
+
+" fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
+set rtp+=~/Programs/fzf
+" search for git tracked files
+nmap <Leader>f :GFiles<CR>
+" search for lines in current buffer
+nmap <Leader>s :BLines<CR>
