@@ -175,3 +175,6 @@ export PATH="$PATH:$HOME/Programs/puma-dev"
 # asdf (to manage Elixir runtimes)
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# hugo
+export PATH="$PATH:$HOME/Programs/hugo_0.61.0"

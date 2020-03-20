@@ -91,8 +91,8 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 " Yank name of current file
 nmap <leader>cs :let @"=expand("%:t")<CR>
 
-" Run angle-brackets codemod on current file. Requires "yarn
-" codemod:angle-brackets" script to be existent in the project.
+" Run Ember.js codemods on current file.
+" Requires "yarn codemod:angle-brackets" script to be existent in the project.
 nnoremap <leader>ca :execute "!yarn codemod:angle-brackets " . expand('%:p')<CR>
 
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
