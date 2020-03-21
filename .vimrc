@@ -94,6 +94,8 @@ nmap <leader>cs :let @"=expand("%:t")<CR>
 " Run Ember.js codemods on current file.
 " Requires "yarn codemod:angle-brackets" script to be existent in the project.
 nnoremap <leader>ca :execute "!yarn codemod:angle-brackets " . expand('%:p')<CR>
+" Requires "yarn codemod:native-class" script to be existent in the project.
+nnoremap <leader>cc :execute "!yarn codemod:native-class " . expand('%:p')<CR>
 
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
 " mode.
