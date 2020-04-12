@@ -177,4 +177,4 @@ export PATH="$PATH:$HOME/Programs/puma-dev"
 . $HOME/.asdf/completions/asdf.bash
 
 # hugo
-export PATH="$PATH:$HOME/Programs/hugo_0.61.0"
+export PATH="$PATH:$HOME/Programs/hugo_0.68.3"
