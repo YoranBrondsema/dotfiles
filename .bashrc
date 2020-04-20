@@ -133,7 +133,7 @@ export EDITOR='vim'
 export PATH="$PATH:$HOME/Programs"
 
 # Aliases
-alias rc='rubocop --safe-auto-correct'
+alias rc='rubocop --auto-correct'
 alias hgrep='history | grep'
 alias angle-brackets='npx ember-angle-brackets-codemod angle-brackets'
 
