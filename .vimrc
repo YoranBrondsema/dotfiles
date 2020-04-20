@@ -113,3 +113,7 @@ set rtp+=~/Programs/fzf
 nmap <Leader>f :GFiles<CR>
 " search for lines in current buffer
 nmap <Leader>s :BLines<CR>
+
+" splitjoin.vim configuration
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
