@@ -96,6 +96,8 @@ nmap <leader>cs :let @"=expand("%:t")<CR>
 nnoremap <leader>ca :execute "!npm run codemod:angle-brackets " . expand('%:p')<CR>
 " Requires "codemod:native-class" script to be existent in package.json.
 nnoremap <leader>cc :execute "!npm run codemod:native-class " . expand('%:p')<CR>
+" Replace "this.set('X', Y)" into "this.X = Y"
+nnoremap <leader>cs :%s/this\.set('\(.\+\)', \(.\+\))/this\.\1 = \2/<CR>
 
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
 " mode.
