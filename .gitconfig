@@ -9,7 +9,7 @@
   poh = "push origin HEAD"
   pohf = "push origin HEAD --force-with-lease"
   plom = "pull origin master"
-  cm = "commit -m"
+  cm = "checkout master"
   aa = "add -A"
   ca = "commit --amend --no-edit"
   last = "log -n 1" # display last commit

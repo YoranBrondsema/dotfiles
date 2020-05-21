@@ -1,22 +1,20 @@
 const { exec } = require("child_process");
 const readline = require("readline");
 
-async function executeStep(commandFn, confirmationQuestion) {
+async function executeStep(confirmationQuestion, commandFn) {
   try {
     await confirm(confirmationQuestion);
     await commandFn();
-  } catch(e) {
-  }
+  } catch(e) {}
+
+  console.log('\n');
 }
 
 function cmd(command) {
   return new Promise((resolve, reject) => {
-    console.log(`$ ${command}`);
-
     exec(command, (error, stdout, stderr) => {
       if (error) {
         reject(error);
-        console.log(`error: ${error.message}`);
         return;
       }
 
@@ -30,6 +28,10 @@ function cmd(command) {
   });
 }
 
+function prettyShellCommand(command) {
+  return `$ ${command}`;
+}
+
 async function confirm(question) {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -37,19 +39,27 @@ async function confirm(question) {
   });
 
   await new Promise((resolve, reject) => {
-    rl.question(`${question} (y/n) `, (answer) => {
+    rl.question(`${question}\n(y/n) `, (answer) => {
       rl.close();
 
       if (answer === 'y') {
+        console.log('ok');
         resolve(answer);
       } else {
+        console.log('skip');
         reject();
       }
     });
   });
 }
 
+function multiline() {
+  return [...arguments].join('\n');
+}
+
 module.exports = {
   executeStep,
-  cmd
+  cmd,
+  prettyShellCommand,
+  multiline
 };
