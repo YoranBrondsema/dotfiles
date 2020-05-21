@@ -11,6 +11,7 @@
   plom = "pull origin master"
   cm = "commit -m"
   aa = "add -A"
+  ca = "commit --amend --no-edit"
   last = "log -n 1" # display last commit
   br = "branch"
   st = "status"
