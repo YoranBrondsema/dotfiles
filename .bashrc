@@ -153,7 +153,7 @@ alias angle-brackets='npx ember-angle-brackets-codemod angle-brackets'
 # <<< conda initialize <<<
 
 # Terraform
-export PATH="$PATH:$HOME/Programs/terraform_0.12.13"
+export PATH="$PATH:$HOME/Programs/terraform"
 
 # Android Studio
 export ANDROID_SDK_ROOT="/home/yoran/Android/Sdk"
