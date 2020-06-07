@@ -87,6 +87,7 @@ nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 nmap <leader>l <Plug>(ale_fix)
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
+let g:ale_fix_on_save = 1
 
 " Yank name of current file
 nmap <leader>cs :let @"=expand("%:t")<CR>
@@ -121,3 +122,8 @@ nmap <Leader>s :BLines<CR>
 " splitjoin.vim configuration
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
+
+" vim-terraform
+" Allow vim-terraform to align settings automatically with Tabularize.
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
