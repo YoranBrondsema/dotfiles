@@ -159,6 +159,8 @@ export PATH="$PATH:$HOME/Programs/terraform"
 export ANDROID_SDK_ROOT="/home/yoran/Android/Sdk"
 # adb (to debug on hardware device over USB)
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+# emulator (launch emulator from command line)
+export PATH="$PATH:$HOME/Android/Sdk/emulator"
 
 # Oracle JDK 8 (needed for corber)
 export PATH="$PATH:$HOME/Programs/jdk1.8.0_231/bin"
