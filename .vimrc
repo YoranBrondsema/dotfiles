@@ -90,7 +90,7 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 let g:ale_fix_on_save = 1
 
 " Yank name of current file
-nmap <leader>cs :let @"=expand("%:t")<CR>
+nmap <leader>fy :let @"=expand("%:t")<CR>
 
 " Run Ember.js codemods on current file.
 " Requires "codemod:angle-brackets" script to be existent in package.json.
