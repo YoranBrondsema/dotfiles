@@ -80,6 +80,7 @@ cabbr <expr> %% expand('%:p:h')
 " Ember.js
 " opens the component.js file
 nnoremap <leader>pc :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.js<CR>
+nnoremap <leader>ps :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.ts<CR>
 " opens the template.hbs file
 nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 
@@ -97,10 +98,10 @@ nmap <leader>fy :let @"=expand("%:t")<CR>
 nnoremap <leader>ca :execute "!npm run codemod:angle-brackets " . expand('%:p')<CR>
 " Requires "codemod:native-class" script to be existent in package.json.
 nnoremap <leader>cc :execute "!npm run codemod:native-class " . expand('%:p')<CR>
-" Replace "this.set('X', Y)" into "this.X = Y"
-nnoremap <leader>cs :%s/this\.set('\([a-zA-Z\.]\+\)', \(.\+\))/this\.\1 = \2/<CR>
-" Replace "this.set('X', Y)" into "this.X = Y"
-nnoremap <leader>cg :%s/this\.get('\([^\)]\+\)')/this\.\1/<CR>
+" Replace "X.set('Y', Z)" into "X.Y = Z"
+nnoremap <leader>cs :%s/\([a-zA-Z]\+\)\.set('\([a-zA-Z\.]\+\)', \(.\+\))/\1\.\2 = \3/<CR>
+" Replace "X.get('Y')" into "X.Y"
+nnoremap <leader>cg :%s/\([a-zA-Z]\+\)\.get('\([^\)]\+\)')/\1\.\2/<CR>
 
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
 " mode.
