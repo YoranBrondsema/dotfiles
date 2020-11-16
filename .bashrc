@@ -136,6 +136,7 @@ export PATH="$PATH:$HOME/Programs"
 alias rc='rubocop --auto-correct'
 alias hgrep='history | grep'
 alias angle-brackets='npx ember-angle-brackets-codemod angle-brackets'
+alias sys-updates="sudo apt update && sudo apt upgrade --assume-yes && sudo apt autoremove --assume-yes"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
