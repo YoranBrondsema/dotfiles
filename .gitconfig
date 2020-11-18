@@ -11,6 +11,7 @@
   plom = "pull origin master"
   cm = "checkout master"
   aa = "add -A"
+  ci = "commit --verbose"
   ca = "commit --amend --no-edit"
   last = "log -n 1" # display last commit
   br = "branch"
