@@ -168,6 +168,8 @@ export PATH="$PATH:$HOME/Programs/jdk1.8.0_231/bin"
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# use 'fd' as the default find command
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Google Cloud SQL Proxy
 export PATH="$PATH:$HOME/Programs/cloud_sql_proxy"

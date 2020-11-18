@@ -119,13 +119,6 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
 
-" fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
-set rtp+=~/Programs/fzf
-" search for git tracked files
-nmap <Leader>f :GFiles<CR>
-" search for lines in current buffer
-nmap <Leader>s :BLines<CR>
-
 " splitjoin.vim configuration
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
@@ -134,3 +127,27 @@ let g:splitjoin_ruby_hanging_args = 0
 " Allow vim-terraform to align settings automatically with Tabularize.
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" install vim-plug for fzf (see
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation)
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+" fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
+set rtp+=~/Programs/fzf
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Initialize plugin system
+call plug#end()
+
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+" search for git tracked files
+nmap <Leader>f :ProjectFiles<CR>
