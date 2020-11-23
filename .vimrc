@@ -145,6 +145,9 @@ Plug 'peitalin/vim-jsx-typescript'
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 
+" GraphQL supprot
+Plug 'jparise/vim-graphql'
+
 " Initialize plugin system
 call plug#end()
 
