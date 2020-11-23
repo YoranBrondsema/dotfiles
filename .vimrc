@@ -136,10 +136,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+
 " fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
 set rtp+=~/Programs/fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+" Typescript support
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 " Initialize plugin system
 call plug#end()
 
