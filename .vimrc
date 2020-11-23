@@ -119,10 +119,6 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
 
-" splitjoin.vim configuration
-let g:splitjoin_ruby_curly_braces = 0
-let g:splitjoin_ruby_hanging_args = 0
-
 " vim-terraform
 " Allow vim-terraform to align settings automatically with Tabularize.
 let g:terraform_align=1
@@ -141,12 +137,20 @@ call plug#begin('~/.vim/plugged')
 set rtp+=~/Programs/fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
 " Typescript support
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+" Splitjoin
+Plug 'AndrewRadev/splitjoin.vim'
+
 " Initialize plugin system
 call plug#end()
+
+" splitjoin.vim configuration
+let g:splitjoin_ruby_curly_braces = 0
+let g:splitjoin_ruby_hanging_args = 0
 
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
