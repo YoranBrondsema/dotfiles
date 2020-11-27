@@ -95,6 +95,14 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter% %code%] %s [%severity%]'
 " Run unsafe fixes to allow Style/FrozenStringLiteralComment
 let g:ale_ruby_rubocop_auto_correct_all = 1
+" Set up elixir-ls
+let g:ale_elixir_elixir_ls_release = $HOME.'/Programs/elixir-ls'
+" Fixes the high CPU usage
+let g:ale_elixir_elixir_ls_config = {
+      \   'elixirLS': {
+      \     'dialyzerEnabled': v:false,
+      \   },
+      \ }
 
 " Yank name of current file
 nmap <leader>fy :let @"=expand("%:t")<CR>
