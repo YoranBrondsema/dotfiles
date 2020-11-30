@@ -163,10 +163,10 @@ call plug#end()
 let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
 
+" fzf config
 function! s:find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
-
 command! ProjectFiles execute 'Files' s:find_git_root()
 
 " search for git tracked files
