@@ -185,3 +185,6 @@ export PATH="$PATH:$HOME/Programs/puma-dev"
 
 # hugo
 export PATH="$PATH:$HOME/Programs/hugo_0.68.3"
+
+# Rust
+source "$HOME/.cargo/env"
