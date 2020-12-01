@@ -38,7 +38,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax on
-colorscheme slate
+
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * ++nested colorscheme gruvbox
 
 "
 " Backup and swap files
@@ -162,6 +164,10 @@ Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 " JSX and TSX
 Plug 'maxmellon/vim-jsx-pretty'
+" Color scheme
+Plug 'morhetz/gruvbox'
+" Show whitespaces
+Plug 'ntpeters/vim-better-whitespace'
 " Initialize plugin system
 call plug#end()
 
@@ -170,10 +176,14 @@ let g:splitjoin_ruby_curly_braces = 0
 let g:splitjoin_ruby_hanging_args = 0
 
 " fzf config
-function! s:find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+function! s:list_cmd()
+  let base = fnamemodify(expand('%'), ':h:.:S')
+  return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
 endfunction
-command! ProjectFiles execute 'Files' s:find_git_root()
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, {'source': s:list_cmd(),
+  \                               'options': '--tiebreak=index'}, <bang>0)
 
 " search for git tracked files
-nmap <Leader>f :ProjectFiles<CR>
+nmap <Leader>f :Files<CR>
