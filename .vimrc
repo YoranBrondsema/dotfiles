@@ -1,4 +1,4 @@
-execute pathogen#infect()
+" execute pathogen#infect()
 set nocompatible " We're running Vim, not Vi!
 set encoding=utf8
 set showcmd
@@ -38,7 +38,7 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax on
-colorscheme wombat256i
+colorscheme slate
 
 "
 " Backup and swap files
@@ -61,7 +61,7 @@ set colorcolumn=80
 " show current row
 set cursorline
 
-" <leader>  is Space bar
+" <leader> is Space bar
 let mapleader = "\<Space>"
 
 " Key bindings for RSpec focus
@@ -145,17 +145,23 @@ call plug#begin('~/.vim/plugged')
 set rtp+=~/Programs/fzf
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-
 " Typescript support
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
-
-" GraphQL supprot
+" GraphQL support
 Plug 'jparise/vim-graphql'
-
+" Nice comments
+Plug 'tomtom/tcomment_vim'
+" ALE
+Plug 'dense-analysis/ale'
+" Sensible defaults
+Plug 'tpope/vim-sensible'
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+" JSX and TSX
+Plug 'maxmellon/vim-jsx-pretty'
 " Initialize plugin system
 call plug#end()
 
