@@ -1,4 +1,3 @@
-" execute pathogen#infect()
 set nocompatible " We're running Vim, not Vi!
 set encoding=utf8
 set showcmd
@@ -6,9 +5,6 @@ filetype on
 filetype indent on " load filetype-specific indent files
 filetype plugin on
 compiler ruby
-
-" Autocomplete
-set omnifunc=syntaxcomplete#Complete
 
 " Whitespace
 set tabstop=2 " number of visual spaces per TAB
@@ -29,16 +25,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " Theme
-" The following is necessary to have termguicolors work in the terminal (see
-" https://github.com/vim/vim/issues/993#issuecomment-255651605)
-" set Vim-specific sequences for RGB colors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-if (has("termguicolors"))
- set termguicolors
-endif
 syntax on
-
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
 
@@ -65,6 +52,37 @@ set cursorline
 
 " <leader> is Space bar
 let mapleader = "\<Space>"
+
+" install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+
+" Color scheme
+Plug 'morhetz/gruvbox'
+" fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
+set rtp+=/usr/local/opt/fz
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Splitjoin
+Plug 'AndrewRadev/splitjoin.vim'
+" GraphQL support
+Plug 'jparise/vim-graphql'
+" Nice comments
+Plug 'tomtom/tcomment_vim'
+" ALE
+Plug 'dense-analysis/ale'
+" Sensible defaults
+Plug 'tpope/vim-sensible'
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+" Show whitespaces
+Plug 'ntpeters/vim-better-whitespace'
+" Initialize plugin system
+call plug#end()
 
 " Key bindings for RSpec focus
 " (https://github.com/unifieddialog/vim-rspec-focus)
@@ -105,6 +123,14 @@ let g:ale_elixir_elixir_ls_config = {
       \     'dialyzerEnabled': v:false,
       \   },
       \ }
+" linters and fixers
+let g:ale_linters = {
+\ 'elixir': ['credo', 'elixir-ls'],
+\}
+let g:ale_fixers = {
+\ 'typescript': ['eslint'],
+\ 'typescriptreact': ['eslint'],
+\}
 
 " Yank name of current file
 nmap <leader>fy :let @"=expand("%:t")<CR>
@@ -133,43 +159,6 @@ let g:vim_markdown_frontmatter = 1
 " Allow vim-terraform to align settings automatically with Tabularize.
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
-
-" install vim-plug for fzf (see
-" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation)
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin('~/.vim/plugged')
-
-" fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
-set rtp+=/usr/local/opt/fz
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-" Typescript support
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-" Splitjoin
-Plug 'AndrewRadev/splitjoin.vim'
-" GraphQL support
-Plug 'jparise/vim-graphql'
-" Nice comments
-Plug 'tomtom/tcomment_vim'
-" ALE
-Plug 'dense-analysis/ale'
-" Sensible defaults
-Plug 'tpope/vim-sensible'
-" editorconfig
-Plug 'editorconfig/editorconfig-vim'
-" JSX and TSX
-Plug 'maxmellon/vim-jsx-pretty'
-" Color scheme
-Plug 'morhetz/gruvbox'
-" Show whitespaces
-Plug 'ntpeters/vim-better-whitespace'
-" Initialize plugin system
-call plug#end()
 
 " splitjoin.vim configuration
 let g:splitjoin_ruby_curly_braces = 0
