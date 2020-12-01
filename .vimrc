@@ -142,7 +142,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
-set rtp+=~/Programs/fzf
+set rtp+=/usr/local/opt/fz
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " Typescript support
