@@ -81,6 +81,10 @@ Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 " Show whitespaces
 Plug 'ntpeters/vim-better-whitespace'
+" Handlebars
+Plug 'joukevandermaas/vim-ember-hbs'
+" Elixir
+Plug 'elixir-editors/vim-elixir'
 " Initialize plugin system
 call plug#end()
 
@@ -126,8 +130,10 @@ let g:ale_elixir_elixir_ls_config = {
 " linters and fixers
 let g:ale_linters = {
 \ 'elixir': ['credo', 'elixir-ls'],
+\ 'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
+\ 'javascript': ['eslint'],
 \ 'typescript': ['eslint'],
 \ 'typescriptreact': ['eslint'],
 \}

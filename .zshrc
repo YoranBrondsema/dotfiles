@@ -1,4 +1,4 @@
-# Completions (see https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
+# Homebrew completions (see https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
@@ -32,3 +32,6 @@ PROMPT='%F{blue}%~%f $ '
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
