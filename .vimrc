@@ -89,6 +89,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'joukevandermaas/vim-ember-hbs'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
+" Smart surround
+Plug 'tpope/vim-surround'
 " Initialize plugin system
 call plug#end()
 
