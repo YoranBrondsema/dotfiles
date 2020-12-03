@@ -24,14 +24,16 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-" Theme
+" Syntax highlightings
 syntax on
+" Necessary cause otherwise syntax highlighting hangs for Typescript files
+set regexpengine=0
+
+" Theme
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
 
-"
 " Backup and swap files
-"
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_tmp//      " where to put swap files.
 
@@ -63,6 +65,8 @@ call plug#begin('~/.vim/plugged')
 
 " Color scheme
 Plug 'morhetz/gruvbox'
+" Typescript
+Plug 'HerringtonDarkholme/yats.vim'
 " fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
 set rtp+=/usr/local/opt/fz
 Plug 'junegunn/fzf'
