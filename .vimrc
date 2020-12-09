@@ -91,6 +91,8 @@ Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'elixir-editors/vim-elixir'
 " Smart surround
 Plug 'tpope/vim-surround'
+" SCSS
+Plug 'cakebaker/scss-syntax.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -137,11 +139,13 @@ let g:ale_elixir_elixir_ls_config = {
 let g:ale_linters = {
 \ 'elixir': ['credo', 'elixir-ls'],
 \ 'javascript': ['eslint'],
+\ 'html.handlebars': ['ember-template-lint'],
 \}
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
 \ 'typescript': ['eslint'],
 \ 'typescriptreact': ['eslint'],
+\ 'ruby': ['rubocop'],
 \}
 
 " Yank name of current file
