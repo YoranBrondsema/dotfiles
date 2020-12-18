@@ -93,6 +93,8 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-surround'
 " SCSS
 Plug 'cakebaker/scss-syntax.vim'
+" vim-dispatch
+Plug 'tpope/vim-dispatch'
 " Initialize plugin system
 call plug#end()
 
@@ -164,7 +166,6 @@ nnoremap <leader>cg :%s/\([a-zA-Z]\+\)\.get('\([^\)]\+\)')/\1\.\2/<CR>
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
 " mode.
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-
 " Easily replace the word under the cursor.
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 

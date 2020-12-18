@@ -35,3 +35,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# For Python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yoran/Programs/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yoran/Programs/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yoran/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yoran/Programs/google-cloud-sdk/completion.zsh.inc'; fi
