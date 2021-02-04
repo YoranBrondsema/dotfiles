@@ -95,6 +95,7 @@ Plug 'tpope/vim-surround'
 Plug 'cakebaker/scss-syntax.vim'
 " vim-dispatch
 Plug 'tpope/vim-dispatch'
+Plug 'hashivim/vim-terraform'
 " Initialize plugin system
 call plug#end()
 
