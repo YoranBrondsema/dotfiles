@@ -167,7 +167,7 @@ nnoremap <leader>cg :%s/\([a-zA-Z]\+\)\.get('\([^\)]\+\)')/\1\.\2/<CR>
 " mode.
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 " Easily replace the word under the cursor.
-nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>r :%s/<C-r><C-w>/
 
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
