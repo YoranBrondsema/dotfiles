@@ -46,3 +46,12 @@ if [ -f '/Users/yoran/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # Allow [ or ] wherever you want in Rake tasks
 unsetopt nomatch
+
+# Ngrok
+export PATH="$PATH:$HOME/Programs/ngrok"
+
+# Vim-style editing of commands
+bindkey -v
+
+# Android Studio
+export ANDROID_SDK_ROOT=/Users/yoran/Library/Android/sdk
