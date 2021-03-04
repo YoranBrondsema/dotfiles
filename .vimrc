@@ -96,6 +96,8 @@ Plug 'cakebaker/scss-syntax.vim'
 " vim-dispatch
 Plug 'tpope/vim-dispatch'
 Plug 'hashivim/vim-terraform'
+" JSX
+Plug 'maxmellon/vim-jsx-pretty'
 " Initialize plugin system
 call plug#end()
 
@@ -123,7 +125,7 @@ nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 nmap <leader>l <Plug>(ale_fix)
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 " See https://github.com/dense-analysis/ale#5ix-how-can-i-change-the-format-for-echo-messages
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
