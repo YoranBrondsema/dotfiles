@@ -53,5 +53,20 @@ export PATH="$PATH:$HOME/Programs/ngrok"
 # Vim-style editing of commands
 bindkey -v
 
+# JDK from adoptopenjdk from Homebrew (https://github.com/AdoptOpenJDK/homebrew-openjdk)
+export JAVA_HOME=$(/usr/libexec/java_home -v"1.8.0_282");
+
 # Android Studio
-export ANDROID_SDK_ROOT=/Users/yoran/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+
+# Prettifies a JSON file.
+function prettify-json {
+  readonly port=${1:?"The path to the JSON file should be set."}
+  cat $1 | jq '.' > output.json
+  mv output.json $1
+}
