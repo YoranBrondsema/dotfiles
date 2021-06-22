@@ -98,6 +98,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'hashivim/vim-terraform'
 " JSX
 Plug 'maxmellon/vim-jsx-pretty'
+" MJML
+Plug 'amadeus/vim-mjml'
 " Initialize plugin system
 call plug#end()
 
@@ -196,3 +198,12 @@ command! -bang -nargs=? -complete=dir Files
 
 " search for git tracked files
 nmap <Leader>f :Files<CR>
+
+" set the filetype for 'fastlane' (mobile app automation) files
+au BufNewFile,BufRead Appfile set ft=ruby
+au BufNewFile,BufRead Deliverfile set ft=ruby
+au BufNewFile,BufRead Fastfile set ft=ruby
+au BufNewFile,BufRead Gymfile set ft=ruby
+au BufNewFile,BufRead Matchfile set ft=ruby
+au BufNewFile,BufRead Snapfile set ft=ruby
+au BufNewFile,BufRead Scanfile set ft=ruby
