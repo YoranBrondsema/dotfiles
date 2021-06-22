@@ -70,3 +70,9 @@ function prettify-json {
   cat $1 | jq '.' > output.json
   mv output.json $1
 }
+
+# Installed node@14 through Homebrew
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# SCIP linear programming
+export PATH="/Users/yoran/Programs/scipoptsuite-7.0.2/build/bin:$PATH"
