@@ -1,6 +1,3 @@
-set nocompatible " We're running Vim, not Vi!
-set encoding=utf8
-set showcmd
 filetype on
 filetype indent on " load filetype-specific indent files
 filetype plugin on
@@ -12,20 +9,14 @@ set softtabstop=2 " number of spaces in tab when editing
 set expandtab " tabs are spaces
 set shiftwidth=2
 set wrap
-set autoindent
 
 " UI
-set wildmenu " visual autocomplete for command menu
 set showmatch " highlight matching [{()}]
 
 " Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
-" Syntax highlightings
-syntax on
 " Necessary cause otherwise syntax highlighting hangs for Typescript files
 set regexpengine=0
 
@@ -33,18 +24,11 @@ set regexpengine=0
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
 
-" Backup and swap files
-set backupdir=~/.vim/_backup//    " where to put backup files.
-set directory=~/.vim/_tmp//      " where to put swap files.
-
 " show the filename in the window titlebar
 set title
 
 " don’t reset cursor to start of line when moving around
 set nostartofline
-
-" show the (partial) command as it’s being typed
-set showcmd
 
 " 80-character line marker
 set colorcolumn=80
@@ -55,13 +39,8 @@ set cursorline
 " <leader> is Space bar
 let mapleader = "\<Space>"
 
-" install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin('~/.vim/plugged')
+" vim-plug
+call plug#begin(stdpath('data') . '/plugged')
 
 " Color scheme
 Plug 'morhetz/gruvbox'
