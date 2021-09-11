@@ -15,6 +15,8 @@ alias l='ls -CF'
 alias hgrep='history | grep'
 # ruby
 alias rc='rubocop --auto-correct'
+# Neovim
+alias vim="nvim"
 
 # For tmuxinator (https://github.com/tmuxinator/tmuxinator#editor-and-shell)
 export EDITOR='vim'
