@@ -79,6 +79,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'maxmellon/vim-jsx-pretty'
 " MJML
 Plug 'amadeus/vim-mjml'
+" Snake case operations and so on
+Plug 'tpope/vim-abolish'
 " Initialize plugin system
 call plug#end()
 
