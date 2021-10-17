@@ -39,17 +39,17 @@ let mapleader = "\<Space>"
 call plug#begin(stdpath('data') . '/plugged')
 
 " Color scheme
-Plug 'morhetz/gruvbox'
-" Typescript
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'lifepillar/vim-gruvbox8'
 " fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
 set rtp+=/usr/local/opt/fz
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+" All languages
+Plug 'sheerun/vim-polyglot'
+Plug 'joukevandermaas/vim-ember-hbs' " Handlebars in Ember
+Plug 'amadeus/vim-mjml' " MJML
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
-" GraphQL support
-Plug 'jparise/vim-graphql'
 " Nice comments
 Plug 'tomtom/tcomment_vim'
 " ALE
@@ -60,27 +60,17 @@ Plug 'tpope/vim-sensible'
 Plug 'editorconfig/editorconfig-vim'
 " Show whitespaces
 Plug 'ntpeters/vim-better-whitespace'
-" Handlebars
-Plug 'joukevandermaas/vim-ember-hbs'
 " Smart surround
 Plug 'tpope/vim-surround'
-" SCSS
-Plug 'cakebaker/scss-syntax.vim'
 " vim-dispatch
 Plug 'tpope/vim-dispatch'
-Plug 'hashivim/vim-terraform'
-" JSX
-Plug 'maxmellon/vim-jsx-pretty'
-" MJML
-Plug 'amadeus/vim-mjml'
 " Snake case operations and so on
 Plug 'tpope/vim-abolish'
 " Initialize plugin system
 call plug#end()
 
 " Theme
-let g:gruvbox_contrast_dark = 'hard'
-autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme gruvbox8
 
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
