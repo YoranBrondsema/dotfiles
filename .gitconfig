@@ -14,6 +14,7 @@
   ci = "commit --verbose"
   ca = "commit --amend --no-edit"
   last = "log -n 1" # display last commit
+  lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
   br = "branch"
   st = "status"
   # From http://rwjblue.com/2017/05/05/common-git-aliases/
