@@ -55,9 +55,6 @@ export PATH="$PATH:$HOME/Programs/ngrok"
 # Vim-style editing of commands
 bindkey -v
 
-# JDK from adoptopenjdk from Homebrew (https://github.com/AdoptOpenJDK/homebrew-openjdk)
-export JAVA_HOME=$(/usr/libexec/java_home -v"1.8.0_282");
-
 # Android Studio
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -78,3 +75,4 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 
 # SCIP linear programming
 export PATH="/Users/yoran/Programs/scipoptsuite-7.0.2/build/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
