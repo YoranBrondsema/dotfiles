@@ -66,8 +66,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ntpeters/vim-better-whitespace'
 " Handlebars
 Plug 'joukevandermaas/vim-ember-hbs'
-" Elixir
-Plug 'elixir-editors/vim-elixir'
 " Smart surround
 Plug 'tpope/vim-surround'
 " SCSS
@@ -115,17 +113,8 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter% %code%] %s [%severity%]'
 " Run unsafe fixes to allow Style/FrozenStringLiteralComment
 let g:ale_ruby_rubocop_auto_correct_all = 1
-" Set up elixir-ls
-let g:ale_elixir_elixir_ls_release = $HOME.'/Programs/elixir-ls'
-" Fixes the high CPU usage
-let g:ale_elixir_elixir_ls_config = {
-      \   'elixirLS': {
-      \     'dialyzerEnabled': v:false,
-      \   },
-      \ }
 " linters and fixers
 let g:ale_linters = {
-\ 'elixir': ['credo', 'elixir-ls'],
 \ 'javascript': ['eslint'],
 \ 'html.handlebars': ['ember-template-lint'],
 \}
