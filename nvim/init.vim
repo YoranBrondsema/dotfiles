@@ -20,10 +20,6 @@ set smartcase                   " ... unless they contain at least one capital l
 " Necessary cause otherwise syntax highlighting hangs for Typescript files
 set regexpengine=0
 
-" Theme
-let g:gruvbox_contrast_dark = 'hard'
-autocmd vimenter * ++nested colorscheme gruvbox
-
 " show the filename in the window titlebar
 set title
 
@@ -82,13 +78,9 @@ Plug 'tpope/vim-abolish'
 " Initialize plugin system
 call plug#end()
 
-" Key bindings for RSpec focus
-" (https://github.com/unifieddialog/vim-rspec-focus)
-nnoremap <leader>f :AddFocusTag<CR>
-nnoremap <leader>F :RemoveAllFocusTags<CR>
-
-" To delete without cutting.
-nnoremap <leader>d "_d
+" Theme
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
@@ -102,28 +94,7 @@ nnoremap <leader>ps :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.ts<CR>
 " opens the template.hbs file
 nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
 
-" Fixing lints with ale
-nmap <leader>l <Plug>(ale_fix)
-nmap <silent> <leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <leader>j <Plug>(ale_next_wrap)
-let g:ale_fix_on_save = 0
-" See https://github.com/dense-analysis/ale#5ix-how-can-i-change-the-format-for-echo-messages
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter% %code%] %s [%severity%]'
-" Run unsafe fixes to allow Style/FrozenStringLiteralComment
-let g:ale_ruby_rubocop_auto_correct_all = 1
-" linters and fixers
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'html.handlebars': ['ember-template-lint'],
-\}
-let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
-\ 'typescriptreact': ['eslint'],
-\ 'ruby': ['rubocop'],
-\}
+source "ale.vim"
 
 " Yank name of current file
 nmap <leader>fy :let @"=expand("%:t")<CR>
@@ -151,10 +122,6 @@ let g:vim_markdown_frontmatter = 1
 " Allow vim-terraform to align settings automatically with Tabularize.
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
-
-" splitjoin.vim configuration
-let g:splitjoin_ruby_curly_braces = 0
-let g:splitjoin_ruby_hanging_args = 0
 
 " fzf config
 function! s:list_cmd()
