@@ -1,0 +1,2 @@
+" enable spellchecking
+setlocal spell
