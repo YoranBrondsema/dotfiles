@@ -44,10 +44,8 @@ Plug 'lifepillar/vim-gruvbox8'
 set rtp+=/usr/local/opt/fz
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-" All languages
-Plug 'sheerun/vim-polyglot'
-Plug 'joukevandermaas/vim-ember-hbs' " Handlebars in Ember
-Plug 'amadeus/vim-mjml' " MJML
+" tree-sitter for syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " Nice comments
@@ -155,3 +153,34 @@ au BufNewFile,BufRead Gymfile set ft=ruby
 au BufNewFile,BufRead Matchfile set ft=ruby
 au BufNewFile,BufRead Snapfile set ft=ruby
 au BufNewFile,BufRead Scanfile set ft=ruby
+
+" tree-sitter
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "javascript",
+    "glimmer",
+    "ruby",
+    "bash",
+    "comment",
+    "css",
+    "dockerfile",
+    "graphql",
+    "html",
+    "json",
+    "scss",
+    "toml",
+    "typescript",
+    "vim"
+  },
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false
+  },
+}
+EOF
