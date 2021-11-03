@@ -8,5 +8,5 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":fund"
+  - trigger: ":bt"
     replace: "I took note of the funds you requested. I'll get back to you as soon as I've added them."
