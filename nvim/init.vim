@@ -46,6 +46,8 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " tree-sitter for syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" tree-sitter doesn't work well for Terraform
+Plug 'hashivim/vim-terraform'
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " Nice comments
@@ -114,7 +116,7 @@ nnoremap <leader>ca :execute "!npm run codemod:angle-brackets " . expand('%:p')<
 " Requires "codemod:native-class" script to be existent in package.json.
 nnoremap <leader>cc :execute "!npm run codemod:native-class " . expand('%:p')<CR>
 " Replace "X.set('Y', Z)" into "X.Y = Z"
-nnoremap <leader>cs :%s/\([a-zA-Z]\+\)\.set('\([a-zA-Z\.]\+\)', \(.\+\))/\1\.\2 = \3/<CR>
+nnoremap <leader>cs :%s/\([a-zA-Z]\+\)\.set('\([0-9a-zA-Z\.]\+\)', \(.\+\))/\1\.\2 = \3/<CR>
 " Replace "X.get('Y')" into "X.Y"
 nnoremap <leader>cg :%s/\([a-zA-Z]\+\)\.get('\([^\)]\+\)')/\1\.\2/<CR>
 
@@ -181,6 +183,9 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false
+  },
+  indent = {
+    enable = true
   },
 }
 EOF
