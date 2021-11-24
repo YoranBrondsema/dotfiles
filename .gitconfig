@@ -26,3 +26,5 @@
   followTags = true
 [pull]
   rebase = true
+[pager]
+  branch = false
