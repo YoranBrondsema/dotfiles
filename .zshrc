@@ -149,3 +149,10 @@ export PATH="/usr/local/opt/node@14/bin:$PATH"
 # SCIP linear programming
 export PATH="/Users/yoran/Programs/scipoptsuite-7.0.2/build/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+
+# PostgreSQL
+export PATH="/usr/local/Cellar/postgresql@13/13.5_1/bin/:$PATH"
+
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
