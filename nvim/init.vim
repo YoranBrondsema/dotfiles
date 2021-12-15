@@ -66,6 +66,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 " Snake case operations and so on
 Plug 'tpope/vim-abolish'
+" Repeat vim-surround
+Plug 'tpope/vim-repeat'
 " Initialize plugin system
 call plug#end()
 
