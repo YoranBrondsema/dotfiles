@@ -37,13 +37,11 @@ let mapleader = "\<Space>"
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
-
 " Color scheme
 Plug 'lifepillar/vim-gruvbox8'
-" fzf (see https://github.com/junegunn/fzf#as-vim-plugin)
-set rtp+=/usr/local/opt/fz
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 " tree-sitter for syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " tree-sitter doesn't work well for Terraform
@@ -68,6 +66,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-abolish'
 " Repeat vim-surround
 Plug 'tpope/vim-repeat'
+" No yanking when deleting
+Plug 'svermeulen/vim-cutlass'
 " Initialize plugin system
 call plug#end()
 
@@ -80,11 +80,7 @@ colorscheme gruvbox8
 cabbr <expr> %% expand('%:p:h')
 
 " Ember.js
-" opens the component.js file
-nnoremap <leader>pc :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.js<CR>
-nnoremap <leader>ps :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/component.ts<CR>
-" opens the template.hbs file
-nnoremap <leader>pt :vsp <C-r>=fnameescape(expand('%:p:h'))<CR>/template.hbs<CR>
+source $HOME/.config/nvim/modules/emberjs.vim
 
 " Fixing lints with ale
 nmap <leader>l <Plug>(ale_fix)
@@ -136,18 +132,8 @@ let g:vim_markdown_frontmatter = 1
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-" fzf config
-function! s:list_cmd()
-  let base = fnamemodify(expand('%'), ':h:.:S')
-  return base == '.' ? 'fd -t f' : printf('fd -t f | proximity-sort %s', expand('%'))
-endfunction
-
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, {'source': s:list_cmd(),
-  \                               'options': '--tiebreak=index'}, <bang>0)
-
-" search for git tracked files
-nmap <Leader>f :Files<CR>
+" Telescope
+source $HOME/.config/nvim/modules/finder.vim
 
 " set the filetype for 'fastlane' (mobile app automation) files
 au BufNewFile,BufRead Appfile set ft=ruby
@@ -157,6 +143,9 @@ au BufNewFile,BufRead Gymfile set ft=ruby
 au BufNewFile,BufRead Matchfile set ft=ruby
 au BufNewFile,BufRead Snapfile set ft=ruby
 au BufNewFile,BufRead Scanfile set ft=ruby
+
+" set the filetype for 'danger'
+au BufNewFile,BufRead Dangerfile set ft=ruby
 
 " tree-sitter
 
@@ -191,3 +180,9 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+" Use 'm' for moving (see https://github.com/svermeulen/vim-cutlass#cutlassvim)
+nnoremap m d
+xnoremap m d
+nnoremap mm dd
+nnoremap M D
