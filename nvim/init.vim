@@ -9,26 +9,19 @@ set softtabstop=2 " number of spaces in tab when editing
 set expandtab " tabs are spaces
 set shiftwidth=2
 set wrap
-
 " UI
 set showmatch " highlight matching [{()}]
-
 " Searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
-
 " Necessary cause otherwise syntax highlighting hangs for Typescript files
 set regexpengine=0
-
 " show the filename in the window titlebar
 set title
-
 " don’t reset cursor to start of line when moving around
 set nostartofline
-
 " 80-character line marker
 set colorcolumn=80
-
 " show current row
 set cursorline
 
@@ -79,44 +72,8 @@ colorscheme gruvbox8
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory#Using_a_command_line_abbreviation)
 cabbr <expr> %% expand('%:p:h')
 
-" Ember.js
-source $HOME/.config/nvim/modules/emberjs.vim
-
-" Fixing lints with ale
-nmap <leader>l <Plug>(ale_fix)
-nmap <silent> <leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <leader>j <Plug>(ale_next_wrap)
-let g:ale_fix_on_save = 0
-" See https://github.com/dense-analysis/ale#5ix-how-can-i-change-the-format-for-echo-messages
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter% %code%] %s [%severity%]'
-" Run unsafe fixes to allow Style/FrozenStringLiteralComment
-let g:ale_ruby_rubocop_auto_correct_all = 1
-" linters and fixers
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'html.handlebars': ['ember-template-lint'],
-\}
-let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
-\ 'typescriptreact': ['eslint'],
-\ 'ruby': ['rubocop'],
-\}
-
 " Yank name of current file
 nmap <leader>fy :let @"=expand("%:t")<CR>
-
-" Run Ember.js codemods on current file.
-" Requires "codemod:angle-brackets" script to be existent in package.json.
-nnoremap <leader>ca :execute "!npm run codemod:angle-brackets " . expand('%:p')<CR>
-" Requires "codemod:native-class" script to be existent in package.json.
-nnoremap <leader>cc :execute "!npm run codemod:native-class " . expand('%:p')<CR>
-" Replace "X.set('Y', Z)" into "X.Y = Z"
-nnoremap <leader>cs :%s/\([a-zA-Z]\+\)\.set('\([0-9a-zA-Z\.]\+\)', \(.\+\))/\1\.\2 = \3/<CR>
-" Replace "X.get('Y')" into "X.Y"
-nnoremap <leader>cg :%s/\([a-zA-Z]\+\)\.get('\([^\)]\+\)')/\1\.\2/<CR>
 
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
 " mode.
@@ -132,57 +89,9 @@ let g:vim_markdown_frontmatter = 1
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-" Telescope
-source $HOME/.config/nvim/modules/finder.vim
-
-" set the filetype for 'fastlane' (mobile app automation) files
-au BufNewFile,BufRead Appfile set ft=ruby
-au BufNewFile,BufRead Deliverfile set ft=ruby
-au BufNewFile,BufRead Fastfile set ft=ruby
-au BufNewFile,BufRead Gymfile set ft=ruby
-au BufNewFile,BufRead Matchfile set ft=ruby
-au BufNewFile,BufRead Snapfile set ft=ruby
-au BufNewFile,BufRead Scanfile set ft=ruby
-
-" set the filetype for 'danger'
-au BufNewFile,BufRead Dangerfile set ft=ruby
-
-" tree-sitter
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "javascript",
-    "glimmer",
-    "ruby",
-    "bash",
-    "comment",
-    "css",
-    "dockerfile",
-    "graphql",
-    "html",
-    "json",
-    "scss",
-    "toml",
-    "typescript",
-    "vim"
-  },
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false
-  },
-  indent = {
-    enable = true
-  },
-}
-EOF
-
-" Use 'm' for moving (see https://github.com/svermeulen/vim-cutlass#cutlassvim)
-nnoremap m d
-xnoremap m d
-nnoremap mm dd
-nnoremap M D
+source $HOME/.config/nvim/modules/cutlass.vim
+source $HOME/.config/nvim/modules/emberjs.vim
+source $HOME/.config/nvim/modules/telescope.vim
+source $HOME/.config/nvim/modules/ale.vim
+source $HOME/.config/nvim/modules/treesitter.vim
+source $HOME/.config/nvim/modules/ruby.vim
