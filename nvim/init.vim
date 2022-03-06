@@ -24,6 +24,7 @@ set nostartofline
 set colorcolumn=80
 " show current row
 set cursorline
+set background=dark
 
 " <leader> is Space bar
 let mapleader = "\<Space>"

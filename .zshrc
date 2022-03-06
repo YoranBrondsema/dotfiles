@@ -156,3 +156,6 @@ export PATH="/usr/local/Cellar/postgresql@13/13.5_1/bin/:$PATH"
 # Volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# gitmux (display Git branch in Tmux status)
+export PATH="$PATH:$HOME/Programs/gitmux"
