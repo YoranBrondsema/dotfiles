@@ -14,8 +14,7 @@ require'nvim-treesitter.configs'.setup {
     "toml",
     "vim",
     "javascript",
-    "typescript",
-    "terraform"
+    "typescript"
   },
   highlight = {
     enable = true,              -- false will disable the whole extension

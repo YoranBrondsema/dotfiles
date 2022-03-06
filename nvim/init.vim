@@ -38,7 +38,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " tree-sitter for syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" tree-sitter doesn't work well for Terraform
+" tree-sitter doesn't work with Terraform
 Plug 'hashivim/vim-terraform'
 " Typescript and Javascript (bad support for indentation in treesitter)
 Plug 'HerringtonDarkholme/yats.vim'
