@@ -1,4 +1,3 @@
-lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "glimmer",
@@ -32,4 +31,3 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
 }
-EOF

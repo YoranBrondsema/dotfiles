@@ -92,7 +92,7 @@ let g:terraform_fmt_on_save=1
 
 source $HOME/.config/nvim/modules/cutlass.vim
 source $HOME/.config/nvim/modules/emberjs.vim
-source $HOME/.config/nvim/modules/telescope.vim
+source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/ale.vim
-source $HOME/.config/nvim/modules/treesitter.vim
+source $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/ruby.vim
