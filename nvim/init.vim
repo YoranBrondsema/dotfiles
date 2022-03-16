@@ -40,10 +40,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " tree-sitter doesn't work with Terraform
 Plug 'hashivim/vim-terraform'
-" Typescript and Javascript (bad support for indentation in treesitter)
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " Nice comments

@@ -14,12 +14,12 @@ require'nvim-treesitter.configs'.setup {
     "toml",
     "vim",
     "javascript",
-    "typescript"
+    "typescript",
+    "tsx"
   },
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = {
-      "javascript", "typescript",
       "terraform"
     },
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
