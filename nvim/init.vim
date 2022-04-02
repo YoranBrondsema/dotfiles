@@ -31,8 +31,6 @@ let mapleader = "\<Space>"
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
-" Color scheme
-Plug 'lifepillar/vim-gruvbox8'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -62,11 +60,13 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 " No yanking when deleting
 Plug 'svermeulen/vim-cutlass'
+" Color scheme
+Plug 'arcticicestudio/nord-vim'
 " Initialize plugin system
 call plug#end()
 
 " Theme
-colorscheme gruvbox8
+colorscheme nord
 
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
