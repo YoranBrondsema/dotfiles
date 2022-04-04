@@ -20,6 +20,8 @@
   # From http://rwjblue.com/2017/05/05/common-git-aliases/
   list-branches = "branch --sort=-committerdate"
   delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
+  # From https://stackoverflow.com/a/25952970/1269194
+  t = "log --tags --no-walk --date=iso-local --pretty='%C(auto)%h %cd%d %s'"
 [gpg]
 	program = gpg2
 [push]
