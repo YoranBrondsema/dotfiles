@@ -8,3 +8,5 @@ au BufNewFile,BufRead Snapfile set ft=ruby
 au BufNewFile,BufRead Scanfile set ft=ruby
 " set the filetype for 'danger'
 au BufNewFile,BufRead Dangerfile set ft=ruby
+" iOS projects
+au BufNewFile,BufRead Podfile set ft=ruby
