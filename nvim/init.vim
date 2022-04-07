@@ -65,8 +65,11 @@ Plug 'arcticicestudio/nord-vim'
 " Initialize plugin system
 call plug#end()
 
-" Theme
+" Colors
 colorscheme nord
+if (has("termguicolors"))
+   set termguicolors
+endif
 
 " Type "%%/" path to quickly edit a file in the same directory as the current
 " file (from
