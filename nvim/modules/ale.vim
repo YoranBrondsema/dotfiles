@@ -9,14 +9,3 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter% %code%] %s [%severity%]'
 " Run unsafe fixes to allow Style/FrozenStringLiteralComment
 let g:ale_ruby_rubocop_auto_correct_all = 1
-" linters and fixers
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'html.handlebars': ['ember-template-lint'],
-\}
-let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint'],
-\ 'typescriptreact': ['eslint'],
-\ 'ruby': ['rubocop'],
-\}
