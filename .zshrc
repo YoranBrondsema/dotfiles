@@ -92,7 +92,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias hgrep='history | grep'
 # ruby
-alias rc='rubocop --auto-correct'
+alias rc='rubocop --autocorrect'
 # Neovim
 alias vim="nvim"
 

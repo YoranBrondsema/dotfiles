@@ -31,11 +31,11 @@ let mapleader = "\<Space>"
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
-" Telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 " tree-sitter for syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " tree-sitter doesn't work with Terraform
 Plug 'hashivim/vim-terraform'
 " Splitjoin

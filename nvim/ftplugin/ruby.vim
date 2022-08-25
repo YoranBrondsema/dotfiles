@@ -1,7 +1,7 @@
 let b:ale_linters = ['rubocop', 'sorbet']
 let b:ale_fixers = ['rubocop']
 " Hard-coded until https://github.com/sorbet/sorbet/issues/2496 is fixed.
-let g:ale_ruby_sorbet_executable = '/Users/yoran/.rvm/gems/ruby-3.0.3@curvo-backend/gems/sorbet-static-0.5.9859-universal-darwin-21/libexec/sorbet'
+let g:ale_ruby_sorbet_executable = '/Users/yoran/.rvm/gems/ruby-3.0.4@curvo-backend/gems/sorbet-static-0.5.10010-universal-darwin-21/libexec/sorbet'
 
 " run tests
 nmap <Leader>tc :Dispatch rspec %<CR>

@@ -14,7 +14,8 @@ require'nvim-treesitter.configs'.setup {
     "vim",
     "javascript",
     "typescript",
-    "tsx"
+    "tsx",
+    "lua"
   },
   highlight = {
     enable = true,              -- false will disable the whole extension

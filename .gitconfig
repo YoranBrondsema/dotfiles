@@ -11,14 +11,15 @@
   plom = "pull origin master"
   cm = "checkout master"
   aa = "add -A"
-  ci = "commit --verbose"
   ca = "commit --amend --no-edit"
   last = "log -n 1" # display last commit
   lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
   br = "branch"
   st = "status"
+  cb = "checkout -b"
+  # Diff with previous commit
+  diffp = "diff HEAD^ HEAD"
   # From http://rwjblue.com/2017/05/05/common-git-aliases/
-  list-branches = "branch --sort=-committerdate"
   delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
   # From https://stackoverflow.com/a/25952970/1269194
   t = "log --tags --no-walk --date=iso-local --pretty='%C(auto)%h %cd%d %s'"
