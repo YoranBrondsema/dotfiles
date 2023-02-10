@@ -1,21 +1,22 @@
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
-    "glimmer",
-    "ruby",
     "bash",
     "comment",
     "css",
     "dockerfile",
+    "gitignore",
+    "glimmer",
     "graphql",
     "html",
+    "javascript",
     "json",
+    "lua",
+    "ruby",
     "scss",
     "toml",
-    "vim",
-    "javascript",
-    "typescript",
     "tsx",
-    "lua"
+    "typescript",
+    "vim",
   },
   highlight = {
     enable = true,              -- false will disable the whole extension
