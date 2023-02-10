@@ -105,7 +105,7 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 alias fvim='vim $(fzf)'
 
 # asdf
-. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
