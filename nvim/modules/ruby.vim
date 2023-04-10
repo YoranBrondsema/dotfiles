@@ -10,3 +10,6 @@ au BufNewFile,BufRead Scanfile set ft=ruby
 au BufNewFile,BufRead Dangerfile set ft=ruby
 " iOS projects
 au BufNewFile,BufRead Podfile set ft=ruby
+" thor (https://github.com/rails/thor)
+au BufNewFile,BufRead Thorfile set ft=ruby
+au BufNewFile,BufRead *.thor set ft=ruby
