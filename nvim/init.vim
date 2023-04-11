@@ -62,6 +62,8 @@ Plug 'tpope/vim-repeat'
 Plug 'svermeulen/vim-cutlass'
 " Color scheme
 Plug 'arcticicestudio/nord-vim'
+" MJML
+Plug 'amadeus/vim-mjml'
 " Initialize plugin system
 call plug#end()
 
