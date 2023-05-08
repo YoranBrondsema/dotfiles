@@ -64,6 +64,8 @@ Plug 'svermeulen/vim-cutlass'
 Plug 'arcticicestudio/nord-vim'
 " MJML
 Plug 'amadeus/vim-mjml'
+" analyse startup time
+Plug 'dstein64/vim-startuptime'
 " Initialize plugin system
 call plug#end()
 
