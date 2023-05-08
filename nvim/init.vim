@@ -92,8 +92,14 @@ let g:vim_markdown_frontmatter = 1
 
 " vim-terraform
 " Allow vim-terraform to align settings automatically with Tabularize.
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
+
+" disable the providers we don't use
+let g:loaded_python3_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
 
 source $HOME/.config/nvim/modules/cutlass.vim
 source $HOME/.config/nvim/modules/emberjs.vim
