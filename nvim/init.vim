@@ -61,7 +61,7 @@ Plug 'tpope/vim-repeat'
 " No yanking when deleting
 Plug 'svermeulen/vim-cutlass'
 " Color scheme
-Plug 'arcticicestudio/nord-vim'
+Plug 'nordtheme/vim'
 " MJML
 Plug 'amadeus/vim-mjml'
 " analyse startup time
