@@ -61,7 +61,7 @@ Plug 'tpope/vim-repeat'
 " No yanking when deleting
 Plug 'svermeulen/vim-cutlass'
 " Color scheme
-Plug 'nordtheme/vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " MJML
 Plug 'amadeus/vim-mjml'
 " analyse startup time
@@ -70,7 +70,7 @@ Plug 'dstein64/vim-startuptime'
 call plug#end()
 
 " Colors
-colorscheme nord
+colorscheme tokyonight-night
 if (has("termguicolors"))
    set termguicolors
 endif
