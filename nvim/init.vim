@@ -66,11 +66,13 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'amadeus/vim-mjml'
 " analyse startup time
 Plug 'dstein64/vim-startuptime'
+" Copilot
+Plug 'github/copilot.vim'
 " Initialize plugin system
 call plug#end()
 
 " Colors
-colorscheme tokyonight-night
+colorscheme tokyonight-storm
 if (has("termguicolors"))
    set termguicolors
 endif
