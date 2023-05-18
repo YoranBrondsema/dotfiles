@@ -84,6 +84,14 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+# search fzf and open in Vim
+alias fvim='vim $(fzf)'
+
+# For tmuxinator (https://github.com/tmuxinator/tmuxinator#editor-and-shell)
+export EDITOR='vim'
+
 # Aliases
 # ls aliases
 alias ls='ls -G'
@@ -96,13 +104,14 @@ alias rc='rubocop --autocorrect'
 # Neovim
 alias vim="nvim"
 
-# For tmuxinator (https://github.com/tmuxinator/tmuxinator#editor-and-shell)
-export EDITOR='vim'
-
-# fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
-# search fzf and open in Vim
-alias fvim='vim $(fzf)'
+# From https://stackoverflow.com/a/69338860/1269194
+printandexecute() {
+  { printf Executing; printf ' %q' "$@"; echo; } >&2
+  "$@"
+}
+# Heroku
+alias hc="printandexecute heroku run rails c --app curvo-backend-production"
+alias hs="printandexecute heroku run rails c --app sutori-production"
 
 # asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
