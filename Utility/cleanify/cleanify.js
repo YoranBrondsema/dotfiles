@@ -76,7 +76,7 @@ async function emptyChromiumCache() {
 
   await executeStep(
     multiline(
-      `Empty the Trash?`,
+      `Empty Chromium cache?`,
       prettyShellCommand(COMMAND)
     ),
     async () => {
@@ -90,7 +90,7 @@ async function emptyChromeCache() {
 
   await executeStep(
     multiline(
-      `Empty the Trash?`,
+      `Empty Chrome cache?`,
       prettyShellCommand(COMMAND)
     ),
     async () => {
