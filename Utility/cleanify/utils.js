@@ -5,21 +5,19 @@ async function executeStep(confirmationQuestion, commandFn) {
   try {
     await confirm(confirmationQuestion);
     await commandFn();
-  } catch(e) {}
+  } catch(e) {
+    console.error(e);
+  }
 
   console.log('\n');
 }
 
 function cmd(command) {
   return new Promise((resolve, reject) => {
+    console.log(prettyShellCommand(command));
     exec(command, (error, stdout, stderr) => {
       if (error) {
         reject(error);
-        return;
-      }
-
-      if (stderr) {
-        reject(stderr);
         return;
       }
 
@@ -43,7 +41,6 @@ async function confirm(question) {
       rl.close();
 
       if (answer === 'y') {
-        console.log('ok');
         resolve(answer);
       } else {
         console.log('skip');
@@ -57,9 +54,14 @@ function multiline() {
   return [...arguments].join('\n');
 }
 
+function uniq(array) {
+  return Array.from(new Set(array));
+}
+
 module.exports = {
   executeStep,
   cmd,
   prettyShellCommand,
-  multiline
+  multiline,
+  uniq
 };
