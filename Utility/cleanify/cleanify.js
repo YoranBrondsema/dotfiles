@@ -2,17 +2,17 @@ const { executeStep, cmd, prettyShellCommand, multiline, uniq } = require('./uti
 
 (
   async function() {
-    // await cleanXcode();
+    await cleanXcode();
     await cleanAndroid();
-    // await cleanNpmCache();
-    // await cleanYarnCache();
-    // await cleanVimSwapFiles();
-    // await emptyTrash();
-    // await emptyChromiumCache();
-    // await emptyChromeCache();
-    // await cleanupBrew();
-    // await cleanupGems();
-    // await removeUnusedRubies();
+    await cleanNpmCache();
+    await cleanYarnCache();
+    await cleanVimSwapFiles();
+    await emptyTrash();
+    await emptyChromiumCache();
+    await emptyChromeCache();
+    await cleanupBrew();
+    await cleanupGems();
+    await removeUnusedRubies();
   }
 )();
 
