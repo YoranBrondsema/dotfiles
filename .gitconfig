@@ -9,6 +9,7 @@
 [alias]
   poh = "push origin HEAD"
   pohf = "push origin HEAD --force-with-lease"
+  plo = "pull origin"
   plom = "pull origin master"
   cm = "checkout master"
   aa = "add -A"
