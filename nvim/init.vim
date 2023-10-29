@@ -36,8 +36,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-" tree-sitter doesn't work with Terraform
-Plug 'hashivim/vim-terraform'
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " Nice comments
@@ -61,7 +59,7 @@ Plug 'tpope/vim-repeat'
 " No yanking when deleting
 Plug 'svermeulen/vim-cutlass'
 " Color scheme
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim'
 " MJML
 Plug 'amadeus/vim-mjml'
 " analyse startup time
@@ -94,10 +92,10 @@ nnoremap <Leader>r :%s/<C-r><C-w>/
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
 
-" vim-terraform
-" Allow vim-terraform to align settings automatically with Tabularize.
-let g:terraform_align = 1
-let g:terraform_fmt_on_save = 1
+" " vim-terraform
+" " Allow vim-terraform to align settings automatically with Tabularize.
+" let g:terraform_align = 1
+" let g:terraform_fmt_on_save = 1
 
 " disable the providers we don't use
 let g:loaded_python3_provider = 0

@@ -13,3 +13,5 @@ au BufNewFile,BufRead Podfile set ft=ruby
 " thor (https://github.com/rails/thor)
 au BufNewFile,BufRead Thorfile set ft=ruby
 au BufNewFile,BufRead *.thor set ft=ruby
+" Sorbet RBI files
+au BufNewFile,BufRead *.rbi set ft=ruby
