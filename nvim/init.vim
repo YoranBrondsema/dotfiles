@@ -66,6 +66,8 @@ Plug 'amadeus/vim-mjml'
 Plug 'dstein64/vim-startuptime'
 " Copilot
 Plug 'github/copilot.vim'
+" indentation of Terraform
+Plug 'hashivim/vim-terraform'
 " Initialize plugin system
 call plug#end()
 
@@ -92,10 +94,10 @@ nnoremap <Leader>r :%s/<C-r><C-w>/
 " Highlight YAML front matter as used by Jekyll or Hugo.
 let g:vim_markdown_frontmatter = 1
 
-" " vim-terraform
-" " Allow vim-terraform to align settings automatically with Tabularize.
-" let g:terraform_align = 1
-" let g:terraform_fmt_on_save = 1
+" vim-terraform
+" Allow vim-terraform to align settings automatically with Tabularize.
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
 
 " disable the providers we don't use
 let g:loaded_python3_provider = 0
