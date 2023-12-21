@@ -82,8 +82,8 @@ endif
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory#Using_a_command_line_abbreviation)
 cabbr <expr> %% expand('%:p:h')
 
-" Yank name of current file
-nmap <leader>fy :let @"=expand("%:t")<CR>
+" Yank path of current file
+nmap <leader>fy :let @"=expand("%")<CR>
 
 " Press <Ctrl>-j to insert a new line below the cursor without leaving normal
 " mode.
