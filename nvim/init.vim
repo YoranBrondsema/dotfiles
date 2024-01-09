@@ -35,7 +35,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope.nvim'
 " Splitjoin
 Plug 'AndrewRadev/splitjoin.vim'
 " Nice comments
