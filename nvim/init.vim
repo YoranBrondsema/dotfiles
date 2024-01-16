@@ -68,6 +68,8 @@ Plug 'dstein64/vim-startuptime'
 Plug 'github/copilot.vim'
 " indentation of Terraform
 Plug 'hashivim/vim-terraform'
+" astro
+Plug 'wuelnerdotexe/vim-astro'
 " Initialize plugin system
 call plug#end()
 
