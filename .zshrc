@@ -103,6 +103,8 @@ alias hgrep='history | grep'
 alias rc='rubocop --autocorrect'
 # Neovim
 alias vim="nvim"
+# always search in hidden files
+alias ag='ag --hidden'
 
 # From https://stackoverflow.com/a/69338860/1269194
 printandexecute() {
