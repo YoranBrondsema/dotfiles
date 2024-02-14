@@ -7,24 +7,31 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
-  poh = "push origin HEAD"
-  pohf = "push origin HEAD --force-with-lease"
-  plo = "pull origin"
-  plom = "pull origin master"
-  cm = "checkout master"
-  aa = "add -A"
-  ca = "commit --amend --no-edit"
-  last = "log -n 1" # display last commit
-  lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-  br = "branch"
-  st = "status"
-  cb = "checkout -b"
-  # Diff with previous commit
-  diffp = "diff HEAD^ HEAD"
+  st = status
+  ci = commit
+  ca = commit --amend --no-edit
+  br = branch
+  co = checkout
+  cm = checkout master
+  cb = checkout -b
+  ds = diff --staged
+  changes = log -n1 -p --format=fuller
+  last = log -n1 # display last commit
+  undo = clean -f -d
+  undoci = reset HEAD~1
+  unstage = reset HEAD --
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
+  lg-full = log --name-status --pretty=fuller
+  # From https://stackoverflow.com/a/25952970/1269194
+  t = log --tags --no-walk --date=iso-local --pretty='%C(auto)%h %cd%d %s'
+  poh = push origin HEAD
+  pohf = push origin HEAD --force-with-lease
+  plo = pull origin
+  plom = pull origin master
+  aa = add -A
   # From http://rwjblue.com/2017/05/05/common-git-aliases/
   delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
-  # From https://stackoverflow.com/a/25952970/1269194
-  t = "log --tags --no-walk --date=iso-local --pretty='%C(auto)%h %cd%d %s'"
 [gpg]
 	program = gpg2
 [push]
