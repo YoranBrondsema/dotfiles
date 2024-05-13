@@ -11,9 +11,6 @@ set shiftwidth=2
 set wrap
 " UI
 set showmatch " highlight matching [{()}]
-" Searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
 " Necessary cause otherwise syntax highlighting hangs for Typescript files
 set regexpengine=0
 " show the filename in the window titlebar
@@ -22,36 +19,28 @@ set title
 set nostartofline
 " 80-character line marker
 set colorcolumn=80
-" show current row
-set cursorline
-set background=dark
-
-" <leader> is Space bar
-let mapleader = "\<Space>"
 
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
-" tree-sitter for syntax highlighting
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dispatch'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'dense-analysis/ale'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'amadeus/vim-mjml'
+Plug 'dstein64/vim-startuptime'
+Plug 'github/copilot.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'wuelnerdotexe/vim-astro'
+" Nice comments
+Plug 'numToStr/Comment.nvim'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-" Splitjoin
-Plug 'AndrewRadev/splitjoin.vim'
-" Nice comments
-Plug 'tomtom/tcomment_vim'
-" ALE
-Plug 'dense-analysis/ale'
-" Sensible defaults
-Plug 'tpope/vim-sensible'
-" editorconfig
-Plug 'editorconfig/editorconfig-vim'
-" Show whitespaces
-Plug 'ntpeters/vim-better-whitespace'
-" Smart surround
-Plug 'tpope/vim-surround'
-" vim-dispatch
-Plug 'tpope/vim-dispatch'
 " Snake case operations and so on
 Plug 'tpope/vim-abolish'
 " Repeat vim-surround
@@ -60,21 +49,14 @@ Plug 'tpope/vim-repeat'
 Plug 'svermeulen/vim-cutlass'
 " Color scheme
 Plug 'folke/tokyonight.nvim'
-" MJML
-Plug 'amadeus/vim-mjml'
-" analyse startup time
-Plug 'dstein64/vim-startuptime'
-" Copilot
-Plug 'github/copilot.vim'
-" indentation of Terraform
-Plug 'hashivim/vim-terraform'
-" astro
-Plug 'wuelnerdotexe/vim-astro'
 " Initialize plugin system
 call plug#end()
 
+" Set up numToStr/Comment.nvim
+lua require('Comment').setup()
+
 " Colors
-colorscheme tokyonight-storm
+colorscheme tokyonight-night
 if (has("termguicolors"))
    set termguicolors
 endif
@@ -107,8 +89,8 @@ let g:loaded_ruby_provider = 0
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
 
+source $HOME/.config/nvim/modules/global.lua
 source $HOME/.config/nvim/modules/cutlass.vim
-source $HOME/.config/nvim/modules/emberjs.vim
 source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/ale.vim
 source $HOME/.config/nvim/modules/treesitter.lua

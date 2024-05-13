@@ -124,12 +124,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # For Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yoran/Programs/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yoran/Programs/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/yoran/Programs/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yoran/Programs/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Allow [ or ] wherever you want in Rake tasks
 unsetopt nomatch
 
@@ -162,7 +156,7 @@ export PATH="/Users/yoran/Programs/scipoptsuite-7.0.2/build/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
 
 # PostgreSQL
-export PATH="/usr/local/Cellar/postgresql@13/13.5_1/bin/:$PATH"
+export PATH="/usr/local/Cellar/postgresql@16/16.3/bin/:$PATH"
 
 # Volta
 export VOLTA_HOME="$HOME/.volta"

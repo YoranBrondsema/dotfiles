@@ -18,6 +18,8 @@ require'nvim-treesitter.configs'.setup {
     "tsx",
     "typescript",
     "vim",
+    -- to ensure we don't have errors when reading the Vim doc
+    "vimdoc",
   },
   highlight = {
     enable = true,
