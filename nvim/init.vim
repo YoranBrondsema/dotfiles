@@ -3,6 +3,8 @@ filetype indent on " load filetype-specific indent files
 filetype plugin on
 compiler ruby
 
+source $HOME/.config/nvim/modules/global.lua
+
 " Whitespace
 set tabstop=2 " number of visual spaces per TAB
 set softtabstop=2 " number of spaces in tab when editing
@@ -89,7 +91,6 @@ let g:loaded_ruby_provider = 0
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
 
-source $HOME/.config/nvim/modules/global.lua
 source $HOME/.config/nvim/modules/cutlass.vim
 source $HOME/.config/nvim/modules/telescope.lua
 source $HOME/.config/nvim/modules/ale.vim
