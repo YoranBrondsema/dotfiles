@@ -151,9 +151,8 @@ function prettify-json {
 # Installed node@14 through Homebrew
 export PATH="/usr/local/opt/node@14/bin:$PATH"
 
-# SCIP linear programming
-export PATH="/Users/yoran/Programs/scipoptsuite-7.0.2/build/bin:$PATH"
-export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+# Java 17
+export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 
 # PostgreSQL
 export PATH="/usr/local/Cellar/postgresql@16/16.3/bin/:$PATH"
@@ -171,3 +170,7 @@ export CONFIGURE_ARGS=""
 for ext in openssl readline libyaml zlib; do
   CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-$ext-dir=$(brew --prefix $ext)"
 done
+
+# For fastlane (see https://docs.fastlane.tools/getting-started/ios/setup/#set-up-environment-variables)
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
