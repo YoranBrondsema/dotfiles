@@ -1,5 +1,3 @@
-local rspec = require("custom.rspec")
-
 vim.api.nvim_set_keymap(
   "n",
   "<leader>tc",
