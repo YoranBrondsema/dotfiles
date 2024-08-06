@@ -1,6 +1,3 @@
 return {
-  -- add symbols-outline
-  {
-    "AndrewRadev/splitjoin.vim",
-  },
+  { "AndrewRadev/splitjoin.vim" },
 }
