@@ -1,6 +1,28 @@
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tc",
-  ':lua require("custom.rspec").run_rspec_current_file()<CR>',
-  { noremap = true, silent = true }
-)
+require("overseer").setup()
+
+local overseer = require("overseer")
+
+overseer.register_template({
+  name = "Rspec Current File",
+  builder = function(params)
+    local filename = vim.fn.expand("%")
+    if filename == "" then
+      vim.api.nvim_err_writeln("No file name detected. Please open a file to run Rspec.")
+      return
+    end
+    return {
+      cmd = "rspec",
+      args = { filename },
+      components = { "unique", { "open_output", focus = true, direction = "horizontal" }, { "on_exit_set_status" } },
+    }
+  end,
+  condition = {
+    filetype = { "ruby" },
+  },
+})
+
+local function run_rspec_current_file()
+  overseer.run_template({ name = "Rspec Current File" })
+end
+
+vim.keymap.set("n", "<leader>tc", run_rspec_current_file, { noremap = true, silent = true })
