@@ -3,8 +3,8 @@
     "lazyvim.plugins.extras.editor.overseer",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.json",
-    "lazyvim.plugins.extras.lang.ruby",
     "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.util.dot"
   ],
   "news": {
@@ -12,4 +12,3 @@
   },
   "version": 6
 }
-
