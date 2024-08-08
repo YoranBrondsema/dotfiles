@@ -1,7 +1,18 @@
 return {
   "nvim-lualine/lualine.nvim",
   opts = function()
+    local winbar = {
+      lualine_a = { "filename" },
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
+    }
+
     local opts = {
+      winbar = winbar,
+      inactive_winbar = winbar,
       sections = {
         lualine_a = { "mode" },
         lualine_b = {
@@ -13,9 +24,8 @@ return {
           },
         },
         lualine_c = {},
-
         lualine_x = {},
-        lualine_y = { "branch" },
+        lualine_y = {},
         lualine_z = { "progress" },
       },
     }

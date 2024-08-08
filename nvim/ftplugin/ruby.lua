@@ -13,7 +13,11 @@ overseer.register_template({
     return {
       cmd = "rspec",
       args = { filename },
-      components = { "unique", { "open_output", focus = true, direction = "horizontal" }, { "on_exit_set_status" } },
+      components = {
+        { "open_output", focus = true, direction = "horizontal" },
+        { "unique" },
+        { "on_exit_set_status" },
+      },
     }
   end,
   condition = {
