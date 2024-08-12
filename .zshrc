@@ -164,13 +164,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # gitmux (display Git branch in Tmux status)
 export PATH="$PATH:$HOME/Programs/gitmux"
 
-# Fix for installing Ruby 3.1.4 with RVM (see
-# https://stackoverflow.com/a/76922741/1269194)
-export CONFIGURE_ARGS=""
-for ext in openssl readline libyaml zlib; do
-  CONFIGURE_ARGS="${CONFIGURE_ARGS} --with-$ext-dir=$(brew --prefix $ext)"
-done
-
 # For fastlane (see https://docs.fastlane.tools/getting-started/ios/setup/#set-up-environment-variables)
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
