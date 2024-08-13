@@ -55,3 +55,16 @@ end
 vim.keymap.set("n", "<leader>fo", toggle_focus, { noremap = true })
 --- add failing spec
 vim.keymap.set("n", "<leader>tf", "oexpect(true).to be false<esc>", { noremap = true })
+
+-- Add "--auto-correct-all" to Rubocop
+require("conform").formatters.rubocop = {
+  args = {
+    "--server",
+    "--auto-correct-all", -- we replaced the "-a" with "--auto-correct-all"
+    "-f",
+    "quiet",
+    "--stderr",
+    "--stdin",
+    "$FILENAME",
+  },
+}
