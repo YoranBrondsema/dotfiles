@@ -10,3 +10,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.thor",
   command = "setlocal ft=ruby",
 })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "Fastfile",
+  command = "setlocal ft=ruby",
+})
