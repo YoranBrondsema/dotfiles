@@ -1,3 +1,5 @@
+local lspconfig = require("lspconfig")
+
 return {
   "neovim/nvim-lspconfig",
   opts = {
@@ -7,15 +9,20 @@ return {
     servers = {
       sorbet = {
         enabled = true,
+        cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
+        root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
       },
       ruby_lsp = {
-        enabled = true,
+        -- it's causing issues with "prism"
+        enabled = false,
       },
       solargraph = {
         enabled = false,
       },
       rubocop = {
         enabled = true,
+        cmd = { "bundle", "exec", "rubocop", "--lsp" },
+        root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
       },
       standardrb = {
         enabled = false,
