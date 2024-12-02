@@ -1,11 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/yoran/.oh-my-zsh"
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -70,19 +70,55 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Homebrew completions (see https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-  autoload -Uz compinit
-  compinit
-fi
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Aliases
+alias ls='ls -G'
+alias ll='ls -alF'
+alias hgrep='history | grep'
+alias rc='rubocop --autocorrect'
+alias vim="nvim"
+# From https://stackoverflow.com/a/69338860/1269194
+printandexecute() {
+  { printf Executing; printf ' %q' "$@"; echo; } >&2
+  "$@"
+}
+alias hc="printandexecute heroku run rails c --app curvo-backend-production"
+alias hs="printandexecute heroku run rails c --app sutori-production"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
@@ -92,78 +128,17 @@ alias fvim='vim $(fzf)'
 # For tmuxinator (https://github.com/tmuxinator/tmuxinator#editor-and-shell)
 export EDITOR='vim'
 
-# Aliases
-# ls aliases
-alias ls='ls -G'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias hgrep='history | grep'
-# ruby
-alias rc='rubocop --autocorrect'
-# Neovim
-alias vim="nvim"
-# always search in hidden files
-alias ag='ag --hidden'
-
-# From https://stackoverflow.com/a/69338860/1269194
-printandexecute() {
-  { printf Executing; printf ' %q' "$@"; echo; } >&2
-  "$@"
-}
-# Heroku
-alias hc="printandexecute heroku run rails c --app curvo-backend-production"
-alias hs="printandexecute heroku run rails c --app sutori-production"
-
-# asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# For Python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
 # Allow [ or ] wherever you want in Rake tasks
 unsetopt nomatch
-
-# Ngrok
-export PATH="$PATH:$HOME/Programs/ngrok"
 
 # Vim-style editing of commands
 bindkey -v
 
-# Android Studio
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yoranbrondsema/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yoranbrondsema/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# Prettifies a JSON file.
-function prettify-json {
-  readonly port=${1:?"The path to the JSON file should be set."}
-  cat $1 | jq '.' > output.json
-  mv output.json $1
-}
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yoranbrondsema/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yoranbrondsema/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Installed node@14 through Homebrew
-export PATH="/usr/local/opt/node@14/bin:$PATH"
-
-# Java 17
-export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
-
-# PostgreSQL
-export PATH="/usr/local/Cellar/postgresql@16/16.3/bin/:$PATH"
-
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# gitmux (display Git branch in Tmux status)
-export PATH="$PATH:$HOME/Programs/gitmux"
-
-# For fastlane (see https://docs.fastlane.tools/getting-started/ios/setup/#set-up-environment-variables)
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# To have psql in the path
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
