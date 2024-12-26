@@ -142,3 +142,16 @@ if [ -f '/Users/yoranbrondsema/Downloads/google-cloud-sdk/completion.zsh.inc' ];
 
 # To have psql in the path
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Android Studio
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+
+# OpenJDK 17 can build the Curvo Android app as of December 2024.
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home
+
+. "$HOME/.asdf/asdf.sh"
