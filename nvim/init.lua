@@ -19,3 +19,15 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "r", "o", "c" })
   end,
 })
+
+-- Go to definition (gd) and show definition in a split
+-- For vertical split
+vim.keymap.set("n", "<leader>vd", function()
+  vim.cmd("vsplit")
+  vim.lsp.buf.definition()
+end, { noremap = true })
+-- For horizontal split
+vim.keymap.set("n", "<leader>hd", function()
+  vim.cmd("split")
+  vim.lsp.buf.definition()
+end, { noremap = true })
