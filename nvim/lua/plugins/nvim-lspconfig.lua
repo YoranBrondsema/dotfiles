@@ -12,10 +12,6 @@ return {
         cmd = { "bundle", "exec", "srb", "tc", "--lsp" },
         root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
       },
-      ruby_lsp = {
-        -- it's causing issues with "prism"
-        enabled = false,
-      },
       solargraph = {
         enabled = false,
       },
