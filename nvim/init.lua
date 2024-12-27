@@ -25,9 +25,17 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set("n", "<leader>vd", function()
   vim.cmd("vsplit")
   vim.lsp.buf.definition()
-end, { noremap = true })
+end, { noremap = true, desc = "Go to definition in vertical split" })
 -- For horizontal split
 vim.keymap.set("n", "<leader>hd", function()
   vim.cmd("split")
   vim.lsp.buf.definition()
-end, { noremap = true })
+end, { noremap = true, desc = "Go to definition in horizontal split" })
+
+vim.keymap.set("n", "<leader>D", function()
+  local current_file = vim.fn.expand("%:p")
+  if vim.fn.confirm("Delete " .. current_file .. "?", "&Yes\n&No", 2) == 1 then
+    vim.cmd("bdelete")
+    os.remove(current_file)
+  end
+end, { desc = "Delete current file and close split" })

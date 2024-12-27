@@ -29,7 +29,11 @@ local function run_rspec_current_file()
   overseer.run_template({ name = "Rspec Current File" })
 end
 
-vim.keymap.set("n", "<leader>tc", run_rspec_current_file, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>tc", run_rspec_current_file, {
+  noremap = true,
+  silent = true,
+  desc = "Rspec Current File",
+})
 
 --- For RSpec
 local function replace_current_line(new_line)

@@ -8,4 +8,8 @@ local function open_handlebars_template_file()
     print("template.hbs does not exist in " .. current_dir)
   end
 end
-vim.keymap.set("n", "<leader>pt", open_handlebars_template_file, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pt", open_handlebars_template_file, {
+  noremap = true,
+  silent = true,
+  desc = "Open associated Handlebars template file",
+})
