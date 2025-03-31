@@ -18,3 +18,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "Dangerfile",
   command = "setlocal ft=ruby",
 })
+
+vim.g.snacks_animate = false

@@ -7,6 +7,8 @@ return {
   { "hrsh7th/cmp-buffer", enabled = false },
   { "hrsh7th/cmp-nvim-lsp", enabled = false },
   { "hrsh7th/cmp-path", enabled = false },
+  -- we have Copilot for autocomplete
+  { "saghen/blink.cmp", enabled = false },
   -- pairs
   { "echasnovski/mini.pairs", enabled = false },
 }
