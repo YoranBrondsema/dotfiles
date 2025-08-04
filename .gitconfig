@@ -19,8 +19,20 @@
   plo = pull origin
   plom = pull origin master
   aa = add -A
-  # From http://rwjblue.com/2017/05/05/common-git-aliases/
-  delete-merged-branches = "!git branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin"
+  delete-merged-branches = "!f() { \
+    git fetch -p && \
+    master_sha=$(git rev-parse master) && \
+    for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -vE 'master|main'); do \
+      branch_sha=$(git rev-parse \"$branch\") && \
+      if git merge-base --is-ancestor \"$branch\" master || [ \"$branch_sha\" = \"$master_sha\" ]; then \
+        git branch -d \"$branch\" && \
+        git push origin --delete \"$branch\" || true; \
+      fi; \
+    done && \
+    git remote prune origin; \
+  }; f"
+  diffall = !git add -N . && git diff && git reset
+  gcauto = !~/.git-gcauto.sh
 [gpg]
   program = gpg2
 [push]
@@ -47,8 +59,6 @@
   prune = true
   pruneTags = true
   all = true
-[help]
-  autocorrect = prompt
 [commit]
   verbose = true
 [rebase]

@@ -152,6 +152,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 
 # OpenJDK 17 can build the Curvo Android app as of December 2024.
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 . "$HOME/.asdf/asdf.sh"
