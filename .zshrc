@@ -112,6 +112,8 @@ alias ll='ls -alF'
 alias hgrep='history | grep'
 alias rc='rubocop --autocorrect'
 alias vim="nvim"
+alias claude-update="npm install -g @anthropic-ai/claude-code"
+alias curvo="cd ~/Projects/Curvo/curvo && tmuxinator"
 # From https://stackoverflow.com/a/69338860/1269194
 printandexecute() {
   { printf Executing; printf ' %q' "$@"; echo; } >&2

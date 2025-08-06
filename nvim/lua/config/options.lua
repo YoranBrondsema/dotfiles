@@ -20,3 +20,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 vim.g.snacks_animate = false
+
+vim.opt.autoread = true -- re-read the file if it changed
+vim.opt.updatetime = 3000 -- 3 s idle → CursorHold
