@@ -157,3 +157,5 @@ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 . "$HOME/.asdf/asdf.sh"
+
+source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
