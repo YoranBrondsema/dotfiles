@@ -541,6 +541,12 @@ require("lazy").setup({
 					lsp_format = "fallback",
 				}
 			end,
+			formatters = {
+				rubocop = {
+					-- Enable auto-correction: fixes both safe and unsafe cops on save
+					args = { "--auto-correct-all", "--format", "quiet", "--stderr", "--stdin", "$FILENAME" },
+				},
+			},
 			formatters_by_ft = {
 				ruby = { "rubocop" },
 				lua = { "stylua" },
