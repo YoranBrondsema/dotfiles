@@ -377,26 +377,26 @@ require("lazy").setup({
 	{ -- Fuzzy Finder (files, lsp, etc)
 		"nvim-telescope/telescope.nvim",
 		event = "VimEnter",
-		--     dependencies = {
-		--       'nvim-lua/plenary.nvim',
-		--       { -- If encountering errors, see telescope-fzf-native README for installation instructions
-		--         'nvim-telescope/telescope-fzf-native.nvim',
-		--
-		--         -- `build` is used to run some command when the plugin is installed/updated.
-		--         -- This is only run then, not every time Neovim starts up.
-		--         build = 'make',
-		--
-		--         -- `cond` is a condition used to determine whether this plugin should be
-		--         -- installed and loaded.
-		--         cond = function()
-		--           return vim.fn.executable 'make' == 1
-		--         end,
-		--       },
-		--       { 'nvim-telescope/telescope-ui-select.nvim' },
-		--
-		--       -- Useful for getting pretty icons, but requires a Nerd Font.
-		--       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-		--     },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ -- If encountering errors, see telescope-fzf-native README for installation instructions
+				"nvim-telescope/telescope-fzf-native.nvim",
+
+				-- `build` is used to run some command when the plugin is installed/updated.
+				-- This is only run then, not every time Neovim starts up.
+				build = "make",
+
+				-- `cond` is a condition used to determine whether this plugin should be
+				-- installed and loaded.
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
+			{ "nvim-telescope/telescope-ui-select.nvim" },
+
+			-- Useful for getting pretty icons, but requires a Nerd Font.
+			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		},
 		config = function()
 			--       -- Telescope is a fuzzy finder that comes with a lot of different things that
 			--       -- it can fuzzy find! It's more than just a "file finder", it can search
@@ -436,9 +436,9 @@ require("lazy").setup({
 			--         },
 			--       }
 			--
-			--       -- Enable Telescope extensions if they are installed
-			--       pcall(require('telescope').load_extension, 'fzf')
-			--       pcall(require('telescope').load_extension, 'ui-select')
+			-- Enable Telescope extensions if they are installed
+			pcall(require("telescope").load_extension, "fzf")
+			pcall(require("telescope").load_extension, "ui-select")
 			--
 			--       -- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
@@ -496,19 +496,19 @@ require("lazy").setup({
 		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- Automatically install LSPs and related tools to stdpath for Neovim
-			-- Mason must be loaded before its dependents so we need to set it up here.
-			-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-			{ "mason-org/mason.nvim", opts = {} },
-			{
-				"mason-org/mason-lspconfig.nvim",
-				opts = {
-					ensure_installed = {
-						"ruby_lsp",
-						"sorbet",
-					},
-				},
-			},
+			-- -- Automatically install LSPs and related tools to stdpath for Neovim
+			-- -- Mason must be loaded before its dependents so we need to set it up here.
+			-- -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
+			-- { "mason-org/mason.nvim", opts = {} },
+			-- {
+			-- 	"mason-org/mason-lspconfig.nvim",
+			-- 	opts = {
+			-- 		ensure_installed = {
+			-- 			"ruby_lsp",
+			-- 			"sorbet",
+			-- 		},
+			-- 	},
+			-- },
 			-- 'WhoIsSethDaniel/mason-tool-installer.nvim',
 
 			-- Useful status updates for LSP.
@@ -517,7 +517,6 @@ require("lazy").setup({
 			-- -- Allows extra capabilities provided by blink.cmp
 			-- 'saghen/blink.cmp',
 		},
-		-- config = function()
 	},
 
 	{ -- Autoformat
@@ -929,6 +928,17 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = "Dangerfile",
 	command = "setlocal ft=ruby",
 })
+
+vim.lsp.config.ruby_lsp = {
+	init_options = {
+		formatter = "rubocop",
+	},
+}
+vim.lsp.enable("ruby_lsp")
+vim.lsp.enable("sorbet")
+vim.keymap.set("n", "<leader>cr", function()
+	vim.lsp.buf.rename()
+end, { desc = "LSP: Rename symbol" })
 
 require("overseer").setup()
 
