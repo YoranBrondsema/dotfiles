@@ -936,6 +936,8 @@ vim.lsp.config.ruby_lsp = {
 }
 vim.lsp.enable("ruby_lsp")
 vim.lsp.enable("sorbet")
+vim.lsp.enable("ts_ls")
+
 vim.keymap.set("n", "<leader>cr", function()
 	vim.lsp.buf.rename()
 end, { desc = "LSP: Rename symbol" })
