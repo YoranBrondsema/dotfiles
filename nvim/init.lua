@@ -552,6 +552,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				ruby = { "rubocop" },
 				lua = { "stylua" },
+				javascript = { "prettier" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
@@ -937,6 +938,7 @@ vim.lsp.config.ruby_lsp = {
 vim.lsp.enable("ruby_lsp")
 vim.lsp.enable("sorbet")
 vim.lsp.enable("ts_ls")
+vim.lsp.enable("jsonls")
 
 vim.keymap.set("n", "<leader>cr", function()
 	vim.lsp.buf.rename()
