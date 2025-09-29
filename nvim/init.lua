@@ -910,6 +910,9 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
 
 vim.keymap.set("n", "<leader>r", ":%s/<C-r><C-w>/", { desc = "Replace current word" })
 
+vim.keymap.set("n", "<leader>j", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
+vim.keymap.set("n", "<leader>k", vim.diagnostic.goto_prev, { desc = "Next Diagnostic" })
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = "Thorfile",
 	command = "setlocal ft=ruby",
