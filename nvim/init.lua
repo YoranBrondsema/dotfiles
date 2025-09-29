@@ -104,6 +104,21 @@ vim.o.number = true
 --  Experiment for yourself to see if you like it!
 -- vim.o.relativenumber = true
 
+vim.opt.wrap = true
+
+vim.opt.colorcolumn = "100"
+vim.cmd([[
+  highlight ColorColumn ctermbg=0 guibg=#555555
+]])
+
+-- prevent comments when copy-pasting Ruby
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "r", "o", "c" })
+	end,
+})
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = "a"
 
@@ -841,6 +856,10 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"stevearc/overseer.nvim",
+		opts = {},
+	},
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -907,6 +926,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	pattern = "Dangerfile",
 	command = "setlocal ft=ruby",
 })
+
+require("overseer").setup()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
