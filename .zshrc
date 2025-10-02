@@ -158,6 +158,7 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 . "$HOME/.asdf/asdf.sh"
 
-source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
-
 alias nvim-old='NVIM_APPNAME="nvim-old" nvim'
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
