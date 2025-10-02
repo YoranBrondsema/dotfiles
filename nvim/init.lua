@@ -903,6 +903,7 @@ vim.lsp.config.ruby_lsp = {
 vim.lsp.enable("ruby_lsp")
 vim.lsp.enable("sorbet")
 vim.lsp.enable("ts_ls")
+vim.lsp.enable("eslint")
 vim.lsp.enable("jsonls")
 
 vim.keymap.set("n", "<leader>cr", function()
