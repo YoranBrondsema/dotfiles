@@ -263,13 +263,7 @@ rtp:prepend(lazypath)
 require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"NMAC427/guess-indent.nvim", -- Detect tabstop and shiftwidth automatically
-
-	{
-		"gbprod/cutlass.nvim",
-		opts = {
-			cut_key = "m",
-		},
-	},
+	"svermeulen/vim-cutlass",
 
 	--
 	--   -- NOTE: Plugins can also be added by using a table,
@@ -446,6 +440,7 @@ require("lazy").setup({
 			--       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]iles [G]rep" })
+			vim.keymap.set("n", "<leader>fgg", builtin.grep_string, { desc = "[F]iles [G]rep [G]rep" })
 			--       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
 			--       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 			--       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
@@ -705,43 +700,7 @@ require("lazy").setup({
 		end,
 	},
 
-	{ -- Collection of various small independent plugins/modules
-		"echasnovski/mini.nvim",
-		config = function()
-			--       -- Better Around/Inside textobjects
-			--       --
-			--       -- Examples:
-			--       --  - va)  - [V]isually select [A]round [)]paren
-			--       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-			--       --  - ci'  - [C]hange [I]nside [']quote
-			--       require('mini.ai').setup { n_lines = 500 }
-			--
-			-- Add/delete/replace surroundings (brackets, quotes, etc.)
-			--
-			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-			-- - sd'   - [S]urround [D]elete [']quotes
-			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup()
-
-			-- -- Simple and easy statusline.
-			-- --  You could remove this setup call if you don't like it,
-			-- --  and try some other statusline plugin
-			-- local statusline = require 'mini.statusline'
-			-- -- set use_icons to true if you have a Nerd Font
-			-- statusline.setup { use_icons = vim.g.have_nerd_font }
-			--
-			--       -- You can configure sections in the statusline by overriding their
-			--       -- default behavior. For example, here we set the section for
-			--       -- cursor location to LINE:COLUMN
-			--       ---@diagnostic disable-next-line: duplicate-set-field
-			--       statusline.section_location = function()
-			--         return '%2l:%-2v'
-			--       end
-			--
-			--       -- ... and there is more!
-			--       --  Check out: https://github.com/echasnovski/mini.nvim
-		end,
-	},
+	"tpope/vim-surround",
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -951,6 +910,13 @@ vim.keymap.set("n", "<leader>cr", function()
 end, { desc = "LSP: Rename symbol" })
 
 require("overseer").setup()
+
+-- For `d` (delete) use `m` (for [M]ove) instead (see
+-- https://github.com/svermeulen/vim-cutlass?tab=readme-ov-file#cutlassvim)
+vim.keymap.set("n", "m", "d")
+vim.keymap.set("x", "m", "d")
+vim.keymap.set("n", "mm", "dd")
+vim.keymap.set("n", "M", "D")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
