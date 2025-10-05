@@ -10,7 +10,7 @@ function M.setup()
 				return
 			end
 
-			vim.keymap.set("n", "<leader>ot", function()
+			vim.keymap.set("n", "<leader>os", function()
 				local current_file = vim.fn.expand("%:p")
 
 				local spec_file = current_file:gsub("^(.*/)(app/)", "%1spec/backend/"):gsub("%.rb$", "_spec.rb")
