@@ -12,15 +12,25 @@ function M.setup()
 
 			vim.keymap.set("n", "<leader>os", function()
 				local current_file = vim.fn.expand("%:p")
-
 				local spec_file = current_file:gsub("^(.*/)(app/)", "%1spec/backend/"):gsub("%.rb$", "_spec.rb")
+				vim.cmd("vsplit " .. spec_file)
+			end, { buffer = true, desc = "[O]pen corresponding [S]pec file in vertical split" })
+		end,
+	})
+	-- Open the corresponding code file in a vertical split
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = "ruby",
+		callback = function()
+			local cwd = vim.fn.getcwd()
+			if not cwd:match("^/Users/yoranbrondsema/Projects/Curvo/curvo") then
+				return
+			end
 
-				if vim.fn.filereadable(spec_file) == 1 then
-					vim.cmd("vsplit " .. spec_file)
-				else
-					vim.notify("Spec file not found: " .. spec_file, vim.log.levels.WARN)
-				end
-			end, { buffer = true, desc = "Open spec file in vertical split" })
+			vim.keymap.set("n", "<leader>oc", function()
+				local current_file = vim.fn.expand("%:p")
+				local code_file = current_file:gsub("^(.*/)(spec/backend/)", "%1app/"):gsub("_spec%.rb$", ".rb")
+				vim.cmd("vsplit " .. code_file)
+			end, { buffer = true, desc = "[O]pen corresponding [C]ode file in vertical split" })
 		end,
 	})
 
