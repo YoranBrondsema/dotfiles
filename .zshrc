@@ -162,3 +162,14 @@ alias nvim-old='NVIM_APPNAME="nvim-old" nvim'
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+curvo-sidekiq() {
+	local config=$(heroku config --app curvo-backend-production)
+	local username=$(echo "$config" | grep "SIDEKIQ_USERNAME:" | cut -d: -f2- | xargs)
+	local password=$(echo "$config" | grep "SIDEKIQ_PASSWORD:" | cut -d: -f2- | xargs)
+
+	echo "$username"
+	echo "$password"
+
+	echo -n "$password" | pbcopy
+}
