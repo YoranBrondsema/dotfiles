@@ -555,6 +555,7 @@ require("lazy").setup({
 				scss = { "prettier" },
 				markdown = { "prettier" },
 				yaml = { "prettier" },
+				terraform = { "terraform_fmt" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
@@ -906,10 +907,20 @@ vim.lsp.enable("sorbet")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("eslint")
 vim.lsp.enable("jsonls")
+vim.lsp.enable("terraformls")
 
 vim.keymap.set("n", "<leader>cr", function()
 	vim.lsp.buf.rename()
 end, { desc = "LSP: Rename symbol" })
+
+vim.keymap.set("n", "<leader>fh", function()
+	vim.cmd("split")
+	vim.lsp.buf.definition()
+end, { desc = "[F]ollow definition in [H]orizontal split" })
+vim.keymap.set("n", "<leader>fv", function()
+	vim.cmd("vsplit")
+	vim.lsp.buf.definition()
+end, { desc = "[F]ollow definition in [V]ertical split" })
 
 require("overseer").setup()
 
