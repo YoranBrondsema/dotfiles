@@ -900,6 +900,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.lsp.config.ruby_lsp = {
 	init_options = {
 		formatter = "rubocop",
+		addonSettings = {
+			["Ruby LSP Rails"] = {
+				enablePendingMigrationsPrompt = false,
+			},
+		},
 	},
 }
 vim.lsp.enable("ruby_lsp")
