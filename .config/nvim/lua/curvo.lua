@@ -10,11 +10,17 @@ function M.setup()
 				return
 			end
 
-			vim.keymap.set("n", "<leader>os", function()
+			vim.keymap.set("n", "<leader>osv", function()
 				local current_file = vim.fn.expand("%:p")
 				local spec_file = current_file:gsub("^(.*/)(app/)", "%1spec/backend/"):gsub("%.rb$", "_spec.rb")
 				vim.cmd("vsplit " .. spec_file)
 			end, { buffer = true, desc = "[O]pen corresponding [S]pec file in vertical split" })
+
+			vim.keymap.set("n", "<leader>osh", function()
+				local current_file = vim.fn.expand("%:p")
+				local spec_file = current_file:gsub("^(.*/)(app/)", "%1spec/backend/"):gsub("%.rb$", "_spec.rb")
+				vim.cmd("split " .. spec_file)
+			end, { buffer = true, desc = "[O]pen corresponding [S]pec file in horizontal split" })
 		end,
 	})
 	-- Open the corresponding code file in a vertical split
