@@ -288,18 +288,18 @@ require("lazy").setup({
 	--   -- options to `gitsigns.nvim`.
 	--   --
 	--   -- See `:help gitsigns` to understand what the configuration keys do
-	--   { -- Adds git related signs to the gutter, as well as utilities for managing changes
-	--     'lewis6991/gitsigns.nvim',
-	--     opts = {
-	--       signs = {
-	--         add = { text = '+' },
-	--         change = { text = '~' },
-	--         delete = { text = '_' },
-	--         topdelete = { text = '‾' },
-	--         changedelete = { text = '~' },
-	--       },
-	--     },
-	--   },
+	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+	},
 	--
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
@@ -784,33 +784,30 @@ require("lazy").setup({
 	{
 		"nvim-lualine/lualine.nvim",
 		opts = function()
-			local winbar = {
-				lualine_a = { { "filename", path = 1 } },
-				lualine_b = {},
+			local winbar_config = {
+				lualine_a = { "mode" },
+				lualine_b = {
+					{
+						"filename",
+						file_status = true,
+						newfile_status = false,
+						path = 1,
+					},
+				},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
-				lualine_z = {},
+				lualine_z = { "progress" },
 			}
 
 			local opts = {
-				winbar = winbar,
-				inactive_winbar = winbar,
-				sections = {
-					lualine_a = { "mode" },
-					lualine_b = {
-						{
-							"filename",
-							file_status = true,
-							newfile_status = false,
-							path = 1,
-						},
-					},
-					lualine_c = {},
-					lualine_x = {},
-					lualine_y = {},
-					lualine_z = { "progress" },
+				options = {
+					globalstatus = false,
 				},
+				winbar = winbar_config,
+				inactive_winbar = winbar_config,
+				sections = {},
+				inactive_sections = {},
 			}
 			return opts
 		end,
@@ -850,6 +847,9 @@ require("lazy").setup({
 })
 
 vim.g.snacks_animate = false
+
+-- Disable bottom statusline after plugins load (we use winbar at the top instead)
+vim.o.laststatus = 0
 
 -- Auto-reload any file that has changed on disk ***without*** clobbering
 -- your own edits.
