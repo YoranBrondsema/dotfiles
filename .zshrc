@@ -123,8 +123,7 @@ alias hc="printandexecute heroku run rails c --app curvo-backend-production"
 alias hs="printandexecute heroku run rails c --app sutori-production"
 
 # fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
-# search fzf and open in Vim
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 alias fvim='vim $(fzf)'
 
 # For tmuxinator (https://github.com/tmuxinator/tmuxinator#editor-and-shell)

@@ -438,7 +438,9 @@ require("lazy").setup({
 			local builtin = require("telescope.builtin")
 			--       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 			--       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+			vim.keymap.set("n", "<leader>ff", function()
+				builtin.find_files({ hidden = true })
+			end, { desc = "[F]ind [F]iles" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]iles [G]rep" })
 			vim.keymap.set("n", "<leader>fgg", builtin.grep_string, { desc = "[F]iles [G]rep [G]rep" })
 			vim.keymap.set("n", "<leader>lk", builtin.keymaps, { desc = "[L]ist [K]eymaps" })
@@ -940,3 +942,4 @@ vim.keymap.set("n", "M", "D")
 -- vim: ts=2 sts=2 sw=2 et
 
 require("curvo").setup()
+require("sutori").setup()
