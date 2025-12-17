@@ -23,22 +23,6 @@ function M.setup()
 			end, { buffer = true, desc = "[O]pen corresponding [S]pec file in horizontal split" })
 		end,
 	})
-	-- Open the corresponding code file in a vertical split
-	vim.api.nvim_create_autocmd("FileType", {
-		pattern = "ruby",
-		callback = function()
-			local cwd = vim.fn.getcwd()
-			if not cwd:match("^/Users/yoranbrondsema/Projects/Curvo/curvo") then
-				return
-			end
-
-			vim.keymap.set("n", "<leader>oc", function()
-				local current_file = vim.fn.expand("%:p")
-				local code_file = current_file:gsub("^(.*/)(spec/backend/)", "%1app/"):gsub("_spec%.rb$", ".rb")
-				vim.cmd("vsplit " .. code_file)
-			end, { buffer = true, desc = "[O]pen corresponding [C]ode file in vertical split" })
-		end,
-	})
 
 	-- Open all translation files in splits
 	vim.api.nvim_create_autocmd("FileType", {
