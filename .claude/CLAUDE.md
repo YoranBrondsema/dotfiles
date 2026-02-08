@@ -42,6 +42,7 @@ Only pause to ask for confirmation when:
 - When it doesn't conflict with YAGNI, architect for extensibility and flexibility.
 - We develop defensively. So we raise exceptions when unexpected situations occur. This helps catch issues early and makes debugging easier.
 - We prefer to build ourselves rather than use external libraries.
+- Don't extract constants for "extensibility" when inlining is just as extensible. Adding to an inline array is no harder than adding to a constant.
 
 ## Writing code
 
