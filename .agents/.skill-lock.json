@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-02-23T14:32:59.255Z",
+      "updatedAt": "2026-02-23T14:32:59.255Z"
+    },
+    "using-superpowers": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/using-superpowers/SKILL.md",
+      "skillFolderHash": "2a7f5982368c25f5352a5be2d10ad9a753334226",
+      "installedAt": "2026-02-23T16:19:09.665Z",
+      "updatedAt": "2026-02-23T16:19:09.665Z"
+    },
+    "skill-creator": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/skill-creator/SKILL.md",
+      "skillFolderHash": "a01fbe3fa7f17f64173bd4fdcfecea86a3fd664c",
+      "installedAt": "2026-02-23T16:54:51.761Z",
+      "updatedAt": "2026-02-23T16:54:51.761Z"
+    },
+    "pdf": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/pdf/SKILL.md",
+      "skillFolderHash": "6369f4649de69bd6857c9bc3b058a77206009238",
+      "installedAt": "2026-02-23T16:55:55.437Z",
+      "updatedAt": "2026-02-23T16:55:55.437Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}
