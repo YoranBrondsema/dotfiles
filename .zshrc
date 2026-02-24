@@ -175,3 +175,5 @@ curvo-sidekiq() {
 
 # Created by `pipx` on 2025-12-12 12:37:00
 export PATH="$PATH:/Users/yoranbrondsema/.local/bin"
+
+alias curvo-worktree='/Users/yoranbrondsema/Projects/Curvo/curvo/bin/curvo-worktree'
