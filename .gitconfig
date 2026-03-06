@@ -13,6 +13,7 @@
   br = branch
   cm = checkout master
   cb = checkout -b
+  l = log --oneline -n
   last = log -n1 # display last commit
   poh = push origin HEAD
   pohf = push origin HEAD --force-with-lease
